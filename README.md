@@ -84,6 +84,39 @@ This project will be implemented with the following technologies:
 * JQuery for AJAX requests
 * HTML5 Canvas for graphical representations of connected jobs and skills
 
+### Timeframe
+
+**Weekend + Day 1**:
+
+* [x] Research project and experiment with API and existing SwaggerUI
+* [x] Build proposal
+* [x] Build frontend skeleton
+* [ ] Write API utility calls
+* [ ] Build redux-cycle for skill and job object
+
+**Day 2**:
+
+* [ ] Learn Canvas graphing-data tutorials
+* [ ] Consider if D3 is appropriate given data complexity
+* [ ] Build search forms
+* [ ] Build list items for jobs and skills
+* [ ] Choose and design graphical elements best suited for data
+
+**Day 3**:
+
+* [ ] Build graphics views for jobs and skills
+
+**Day 4**:
+
+* [ ] Finish building graphics for jobs and skills
+* [ ] Style out UI and components
+
+**Day 5**
+
+* [ ] Proofread collateral materials
+* [ ] Put out any fires
+* [ ] Submit by 12:00pm
+
 ### Bonus Features
 
 * [ ] Search support for skills
