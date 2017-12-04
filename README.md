@@ -49,10 +49,9 @@ Users will be able to
 * [ ] Find job titles that contain a certain string
 * [ ] Search for the 'official' normalized name of a job
 * [ ] See jobs related to a normalized job
-* [ ] See skills related to a job
-      * [ ] Skills have a normalized name and description
-      * [ ] Skills are ordered by O\*NET 'importance' (scaled 1-5) then 'level'
-            (scaled 1-7)
+* [ ] See skills related to a job _ [ ] Skills have a normalized name and
+      description _ [ ] Skills are ordered by O\*NET 'importance' (scaled 1-5)
+      then 'level' (scaled 1-7)
 * [ ] Job search results and their relevant skills will have a 'list' and
       'graphical' view that can be interacted with
 
@@ -61,6 +60,20 @@ In addition, this project will include:
 * [ ] An About page describing basic functionality and linking to the project
 
 ### Wireframes
+
+<br><br>
+
+#### Graphical View
+
+<br>
+![Graphical View](https://github.com/ajdelossantos/WDI-UI/blob/master/docs/wireframes/graphical-skills-view.png)
+<br>
+
+#### List View
+
+<br>
+![List View](https://github.com/ajdelossantos/WDI-UI/blob/master/docs/wireframes/list-job-view.png)
+<br>
 
 ### Architecture and Technologies
 
@@ -74,5 +87,6 @@ This project will be implemented with the following technologies:
 ### Bonus Features
 
 * [ ] Search support for skills
+* [ ] Raw JSON output
 * [ ] D3 for more powerful, scalable data-visualizations and Webpack to manage
       any resulting scripts
