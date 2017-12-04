@@ -1,4 +1,4 @@
-## Workforce Data Initiative Open Skills API--UI
+## Job Title Finder & Skills Matcher
 
 ### Background and Overview
 
@@ -97,7 +97,6 @@ This project will be implemented with the following technologies:
 **Day 2**:
 
 * [ ] Learn Canvas graphing-data tutorials
-* [ ] Consider if D3 is appropriate given data complexity
 * [ ] Build search forms
 * [ ] Build list items for jobs and skills
 * [ ] Choose and design graphical elements best suited for data
@@ -121,5 +120,9 @@ This project will be implemented with the following technologies:
 
 * [ ] Search support for skills
 * [ ] Raw JSON output
-* [ ] D3 for more powerful, scalable data-visualizations and Webpack to manage
-      any resulting scripts
+
+<br>
+
+_NB: D3 may be considered for more powerful, scalable data-visualizations and
+Webpack to manage any resulting scripts. However, it's likeky "shooting at
+little birds with big guns."_
