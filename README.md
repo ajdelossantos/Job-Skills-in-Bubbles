@@ -66,13 +66,13 @@ In addition, this project will include:
 #### Graphical View
 
 <br>
-![Graphical View](https://raw.githubusercontent.com/WDI-UI/master/docs/wireframes/graphical-skills-view.png)
+![Graphical View](https://raw.githubusercontent.com/ajdelossantos/WDI-UI/master/docs/wireframes/graphical-skills-view.png)
 <br>
 
 #### List View
 
 <br>
-![List View](https://raw.githubusercontent.com/WDI-UI/master/docs/wireframes/list-job-view.png)
+![List View](https://raw.githubusercontent.com/ajdelossantos/WDI-UI/master/docs/wireframes/list-job-view.png)
 <br>
 
 ### Architecture and Technologies
