@@ -18,31 +18,37 @@ const fetchJobSkills = uuid =>
     dataType: "json"
   });
 
-let currentJobUuid = [];
+// let currentJobUuid = "";
+let currentJob = {};
 
-const displayJobs = payload => {
+const getJobs = payload => {
   $.each(payload, function(index) {
     $.each(this, function(k, v) {
-      if (k === "uuid") {
-        currentJobUuid.push(v);
-        console.log(currentJobUuid);
-        return receiveJobSkills();
-      }
+      // if (k === "uuid") {
+      //   currentJobUuid = v;
+      //   console.log(currentJobUuid);
+      // }
+      currentJob[k] = v;
     });
+    console.log(currentJob);
   });
 };
 
 const receiveJobSkills = () => {
-  if (currentJobUuid.length > 0) {
-    let uuid = currentJobUuid[0];
+  if (currentJob) {
+    let uuid = currentJob.uuid;
     fetchJobSkills(uuid).then(response => console.log(response));
   }
 };
 
 $("#search-btn").click(function() {
-  currentJobUuid = [];
+  currentJob = {};
   var searchField = $("#search").val();
-  fetchNormalizedJobs(searchField).then(response => displayJobs(response));
+  fetchNormalizedJobs(searchField).then(response => getJobs(response));
+});
+
+$("#data-btn").click(function() {
+  return receiveJobSkills();
 });
 
 $("#search-results ul").append();
