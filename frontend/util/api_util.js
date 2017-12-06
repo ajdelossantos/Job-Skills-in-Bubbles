@@ -2,7 +2,8 @@
 export const fetchNormalizedJobs = jobString =>
   $.ajax({
     method: "GET",
-    url: `http://api.dataatwork.org/v1/jobs/normalize?job_title=${jobString}`
+    url: `http://api.dataatwork.org/v1/jobs/normalize?job_title=${jobString}`,
+    dataType: "json"
   });
 
 // Retrieves a collection of skills associated with a specified job

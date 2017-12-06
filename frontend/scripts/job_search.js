@@ -1,54 +1,61 @@
-const fetchNormalizedJobs = jobString =>
+export const fetchNormalizedJob = jobString =>
   $.ajax({
     method: "GET",
     url: `http://api.dataatwork.org/v1/jobs/normalize?job_title=${jobString}`,
     dataType: "json"
   });
 
-const searchJob = jobString =>
-  $.ajax({
-    method: "GET",
-    url: `http://api.dataatwork.org/v1/jobs/autocomplete?contains=${jobString}`
-  });
-
-const fetchJobSkills = uuid =>
+export const fetchJobSkills = uuid =>
   $.ajax({
     method: "GET",
     url: `http://api.dataatwork.org/v1/jobs/${uuid}/related_skills`,
     dataType: "json"
   });
 
-// let currentJobUuid = "";
 let currentJob = {};
+let currentJobSkills = [];
 
-const getJobs = payload => {
-  $.each(payload, function(index) {
+export const getJob = () => currentJob;
+
+export const getSkills = () => currentJobSkills;
+
+export const handleJob = payload => {
+  $.each(payload, function() {
     $.each(this, function(k, v) {
-      // if (k === "uuid") {
-      //   currentJobUuid = v;
-      //   console.log(currentJobUuid);
-      // }
       currentJob[k] = v;
     });
-    console.log(currentJob);
   });
+  clearSearchResult();
+  populateSearchResult(currentJob);
+  clearSearchInput();
+  console.log(currentJob);
+  return currentJob;
 };
 
-const receiveJobSkills = () => {
+export const assignSkills = payload => {
+  $.each(payload, function(k, v) {
+    if (k === "skills") {
+      currentJobSkills = v;
+    }
+  });
+  console.log(currentJobSkills);
+  return currentJobSkills;
+};
+
+export const receiveJobSkills = () => {
   if (currentJob) {
-    let uuid = currentJob.uuid;
-    fetchJobSkills(uuid).then(response => console.log(response));
+    currentJobSkills = [];
+    let uuid = $("a[data-jobUuid]").data().jobuuid;
+    fetchJobSkills(uuid).then(response => assignSkills(response));
   }
 };
 
-$("#search-btn").click(function() {
-  currentJob = {};
-  var searchField = $("#search").val();
-  fetchNormalizedJobs(searchField).then(response => getJobs(response));
-});
-
-$("#data-btn").click(function() {
-  return receiveJobSkills();
-});
-
-$("#search-results ul").append();
+export const populateSearchResult = job => {
+  $("#search-results").append(
+    `<li>
+      <a data-jobUuid=${job.uuid} href="#">${job.title}</a>
+    </li>`
+  );
+};
+export const clearSearchResult = () => $("#search-results").empty();
+export const clearSearchInput = () => $("#search").val("");
