@@ -10,18 +10,11 @@ document.addEventListener("DOMContentLoaded", () => {
     );
   });
 
-  // $("#data-btn").click(function() {
-  //   return JobSearch.receiveJobSkills();
-  // });
-
-  // $("#data-link").click(function() {
-  //   console.log("Hello");
-  // });
-
   $("#skill-btn").click(function() {
-    return SkillsGraphics.listSkills();
+    return SkillsGraphics.renderSkills();
   });
 
-  // const square = d3.selectAll("rect");
-  // square.style("fill", "orange");
+  $("#chart-btn").click(function() {
+    return SkillsGraphics.skillBubbleChart();
+  });
 });

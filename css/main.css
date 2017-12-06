@@ -97,30 +97,12 @@ textarea {
    Author's custom styles
    ========================================================================== */
 
-#react-error-msg {
-  background-color: #ddd;
-  border-radius: 5px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
-  border: 1px solid #aaa;
-  font-family: "Raleway", sans-serif;
-  color: #888;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  padding: 40px;
-  margin: 100px 60px;
+.chart-container {
+  border: 1px dashed red;
 }
 
-#react-error-msg h2 {
-  font-weight: 700;
-  font-style: italic;
-  font-size: 36px;
-}
-
-#react-error-msg p {
-  font-weight: 700;
-  font-size: 16px;
+.chart-box {
+  border: 1px dashed blue;
 }
 
 /* ==========================================================================

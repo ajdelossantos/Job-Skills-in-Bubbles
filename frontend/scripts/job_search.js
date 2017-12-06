@@ -16,40 +16,26 @@ let jobsList = [];
 let currentJob = [];
 
 export const getJobs = () => jobsList;
-
 export const getJob = () => currentJob;
 
 export const handleJob = payload => {
-  // $.each(payload, function() {
-  //   $.each(this, function(k, v) {
-  //     jobsList[k] = v;
-  //   });
-  // });
   jobsList = payload;
   clearSearchResult();
   populateSearchResult(jobsList);
   clearSearchInput();
-  console.log(jobsList);
+  // console.log(jobsList);
   return jobsList;
 };
 
 export const assignCurrentJob = payload => {
-  // $.each(payload, function(k, v) {
-  //   if (k === "skills") {
-  //     currentJob = v;
-  //   }
-  // });
   currentJob = payload;
-  console.log(currentJob);
+  // console.log(currentJob);
   return currentJob;
 };
 
 export const receiveJobSkills = uuid => {
-  // if (jobsList) {
   currentJob = [];
-  // let uuid = $("a[data-jobUuid]").data().jobuuid;
   fetchJobSkills(uuid).then(response => assignCurrentJob(response));
-  // }
 };
 
 export const populateSearchResult = jobs => {
@@ -61,17 +47,10 @@ export const populateSearchResult = jobs => {
       </li>`
     );
     $(`#${job.uuid}`).click(() => {
-      console.log(job.uuid);
+      // console.log(job.uuid);
       return receiveJobSkills(job.uuid);
     });
   });
-  // let link = $("li");
-  // // let jobUuid = $("a[data-jobUuid]").data();
-  // //link.click or link.onClick
-  // link.click(() => {
-  //   // return receiveJobSkills(jobsList[0].uuid);
-  //   console.log("hello");
-  // });
 };
 export const clearSearchResult = () => $("#search-results").empty();
 export const clearSearchInput = () => $("#search").val("");
