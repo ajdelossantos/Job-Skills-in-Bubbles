@@ -1,3 +1,6 @@
+// Special Thanks to Curran Kelleher, Jonathan Soma, and Mike Bostock for their D3 tutorials
+// Much of the D3 code is skeleton from their instructional work
+
 import { getJobs, getJob } from "./job_search";
 import { test } from "../../docs/test-data";
 import * as d3 from "d3";
@@ -15,11 +18,18 @@ export const renderSkills = () => {
 
   skills.forEach((skill, idx) =>
     $("#skills-list").append(
-      `<li>rank #${idx + 1}</li>
-      <li>skill: ${skill.skill_name}</li>
-      <li>description: ${skill.description}</li>
-      <li>importance: ${skill.importance}</li>
-      <li>level: ${skill.level}</li>
+      `<div class="skills-list-box">
+        <li data-skillUuid=${skill.skill_uuid} class="skills-li">
+        <header>rank #${idx + 1}</header>
+          <ul class="skills-details">
+            <li>skill: ${skill.skill_name}</li>
+            <li>skill_uuid: ${skill.skill_uuid}</li>
+            <li>description: ${skill.description}</li>
+            <li>importance: ${skill.importance}</li>
+            <li>level: ${skill.level}</li>
+          </ul>
+        </li>
+      </div>
       <br><br>`
     )
   );
@@ -69,13 +79,32 @@ export const skillBubbleChart = () => {
       .data(datapoints)
       .enter()
       .append("circle")
-      .attr("class", "skill")
+      .attr("class", "skill-circle")
+      .attr("id", d => d.skill_uuid)
       .attr("r", function(d) {
         return radiusScale(d.importance);
       })
       .attr("fill", function(d) {
         return d3.interpolateRainbow(colorScale(d.level));
       });
+
+    const dragStart = () => {
+      d3
+        .select(this)
+        .raise()
+        .classed("active", true);
+    };
+
+    const dragged = d => {
+      d3
+        .select(this)
+        .attr("cx", (d.x = d3.event.x))
+        .attr("cy", (d.y = d3.event.y));
+    };
+
+    const dragEnd = () => {
+      d3.select(this).classed("active", false);
+    };
 
     const ticked = () => {
       circles
@@ -91,4 +120,5 @@ export const skillBubbleChart = () => {
   };
 
   render(getJob().skills);
+  // render(testSkills);
 };
