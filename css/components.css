@@ -1,0 +1,58 @@
+body {
+  background-color: #fdfdfd;
+}
+
+.chart-container {
+  border: 1px dashed red;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 40px;
+  margin: 0 auto;
+  height: 900px;
+  max-width: 1080px;
+  width: 100%;
+}
+
+.chart-box {
+  box-sizing: content-box;
+  border: 1px dashed blue;
+  padding: 5px;
+}
+
+.skills-list-box {
+  border: 1px dashed red;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  width: 400px;
+  height: 100%;
+}
+
+.skills-details {
+  width: 100%;
+}
+
+.skills-scores {
+  border: 1px dashed blue;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.skills-imp,
+.skills-lvl {
+  border: 1px dashed green;
+  display: flex;
+  flex-direction: column;
+  padding: 5px;
+}
+
+.skill-circle:hover {
+  stroke: rgba(0, 0, 0, 0.85);
+  stroke-width: 5px;
+  cursor: pointer;
+}

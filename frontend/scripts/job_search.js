@@ -1,3 +1,5 @@
+import * as SkillsGraphics from "./skills_graphics";
+
 export const fetchNormalizedJob = jobString =>
   $.ajax({
     method: "GET",
@@ -30,6 +32,8 @@ export const handleJob = payload => {
 export const assignCurrentJob = payload => {
   currentJob = payload;
   // console.log(currentJob);
+  SkillsGraphics.renderSkills();
+  SkillsGraphics.skillBubbleChart();
   return currentJob;
 };
 
@@ -52,5 +56,6 @@ export const populateSearchResult = jobs => {
     });
   });
 };
+
 export const clearSearchResult = () => $("#search-results").empty();
 export const clearSearchInput = () => $("#search").val("");

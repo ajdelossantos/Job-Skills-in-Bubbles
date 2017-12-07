@@ -1,9 +1,10 @@
 // Special Thanks to Curran Kelleher, Jonathan Soma, and Mike Bostock for their D3 tutorials
 // Much of the D3 code is skeleton from their instructional work
 
-import { getJobs, getJob } from "./job_search";
+import { getJob } from "./job_search";
 import { test } from "../../docs/test-data";
 import * as d3 from "d3";
+import d3Drag from "d3-drag";
 import { scaleLinear } from "d3-scale";
 
 const testSkills = test.skills;
@@ -11,26 +12,31 @@ const testSkills = test.skills;
 export const renderSkills = () => {
   clearSkillsList();
 
-  // console.log(testSkills);
-  // let skills = testSkills;
-
   let skills = getJob().skills;
 
   skills.forEach((skill, idx) =>
     $("#skills-list").append(
-      `<div class="skills-list-box">
-        <li data-skillUuid=${skill.skill_uuid} class="skills-li">
-        <header>rank #${idx + 1}</header>
-          <ul class="skills-details">
-            <li>skill: ${skill.skill_name}</li>
-            <li>skill_uuid: ${skill.skill_uuid}</li>
-            <li>description: ${skill.description}</li>
-            <li>importance: ${skill.importance}</li>
-            <li>level: ${skill.level}</li>
-          </ul>
-        </li>
-      </div>
-      <br><br>`
+      `
+        <div class="skills-list-box">
+          <li data-skillUuid=${skill.skill_uuid} class="skills-li">
+          <header>rank #${idx + 1}</header>
+            <ul class="skills-details">
+              <li>${skill.skill_name}</li>
+              <li>${skill.description}</li>
+              <div class="skills-scores">
+                <div class="skills-imp">
+                  <li>importance</li>
+                  <li>${skill.importance}</li>
+                </div>
+                <div class="skills-lvl">
+                  <li>level</li>
+                  <li>${skill.level}</li>
+                </div>
+              </div>
+            </ul>
+          </li>
+        </div>
+      `
     )
   );
 };
@@ -40,6 +46,7 @@ const clearSkillsList = () => $("#skills-list").empty();
 export const skillBubbleChart = () => {
   $("#chart").empty();
 
+  const chart = document.querySelector("#chart");
   const width = 900;
   const height = 900;
 
@@ -88,24 +95,6 @@ export const skillBubbleChart = () => {
         return d3.interpolateRainbow(colorScale(d.level));
       });
 
-    const dragStart = () => {
-      d3
-        .select(this)
-        .raise()
-        .classed("active", true);
-    };
-
-    const dragged = d => {
-      d3
-        .select(this)
-        .attr("cx", (d.x = d3.event.x))
-        .attr("cy", (d.y = d3.event.y));
-    };
-
-    const dragEnd = () => {
-      d3.select(this).classed("active", false);
-    };
-
     const ticked = () => {
       circles
         .attr("cx", function(d) {
@@ -120,5 +109,12 @@ export const skillBubbleChart = () => {
   };
 
   render(getJob().skills);
-  // render(testSkills);
+
+  let circles = document.querySelectorAll("circle");
+
+  circles.forEach(circle => {
+    circle.addEventListener("mouseover", event => {
+      console.log("hello");
+    });
+  });
 };
