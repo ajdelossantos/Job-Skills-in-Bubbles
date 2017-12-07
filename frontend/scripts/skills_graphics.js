@@ -30,8 +30,8 @@ const clearSkillsList = () => $("#skills-list").empty();
 export const skillBubbleChart = () => {
   $("#chart").empty();
 
-  const width = 500;
-  const height = 500;
+  const width = 900;
+  const height = 900;
 
   const svg = d3
     .select("#chart")
@@ -45,13 +45,23 @@ export const skillBubbleChart = () => {
   const radiusScale = d3
     .scaleLinear()
     .domain([1, 5])
-    .range([10, 80]);
+    .range([5, 60]);
+
+  const colorScale = d3
+    .scaleLinear()
+    .domain([0, 7])
+    .range([0.1, 0.9]);
 
   const simulation = d3
     .forceSimulation()
     .force("x", d3.forceX(width / 2).strength(0.05))
     .force("y", d3.forceY(height / 2).strength(0.05))
-    .force("collide", d3.forceCollide(10));
+    .force(
+      "collide",
+      d3.forceCollide(function(d) {
+        return radiusScale(d.importance);
+      })
+    );
 
   const render = datapoints => {
     let circles = svg
@@ -63,7 +73,9 @@ export const skillBubbleChart = () => {
       .attr("r", function(d) {
         return radiusScale(d.importance);
       })
-      .attr("fill", "lightblue");
+      .attr("fill", function(d) {
+        return d3.interpolateRainbow(colorScale(d.level));
+      });
 
     const ticked = () => {
       circles
@@ -78,5 +90,5 @@ export const skillBubbleChart = () => {
     simulation.nodes(datapoints).on("tick", ticked);
   };
 
-  render(testSkills);
+  render(getJob().skills);
 };
