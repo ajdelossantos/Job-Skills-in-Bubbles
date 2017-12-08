@@ -6,9 +6,6 @@
   <title>WDI-UI</title>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="bundle.js"></script>
-  <script src="https://d3js.org/d3-dispatch.v1.min.js"></script>
-  <script src="https://d3js.org/d3-selection.v1.min.js"></script>
-  <script src="https://d3js.org/d3-drag.v1.min.js"></script>
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/main.css">
   <link rel="stylesheet" href="css/components.css">
@@ -16,26 +13,42 @@
 </head>
 
 <body>
-  <div class="searcharea">
-    <heading>
-      <h2>Search Component</h2>
-      <label for="job-search">Search for a Job</label>
-      <input type="search" name="search" id="search" placeholder="job title" />
-      <button id="search-btn">Search</button>
-    </heading>
-
-    <div id="list">
-      <label for="search-results">Search History</label>
-      <ul id="search-results"></ul>
+  <div class="main">
+    <div class="header-group">
+      <hgroup>
+        <h2>Job Skills in Bubbles</h2>
+      </hgroup>
     </div>
-  </div>
 
-  <div id="graphic">
-    <h2>Graphics Placeholder</h2>
+    <div class="info-group">
+      <div class="search-group">
+        <heading>
+          <h2>search for a job</h2>
+          <label for="job-search">search for a job</label>
+          <input type="search" name="search" id="search" placeholder="job title" />
+          <button id="search-btn">search</button>
+        </heading>
 
-    <div id="chart" class="chart-container"></div>
+        <div id="search-list">
+          <label for="search-results">job titles</label>
+          <ul id="search-results"></ul>
+        </div>
+      </div>
 
-    <ul id="skills-list"></ul>
+      <div id="graphic-group">
+        <h2>bubble chart</h2>
+        <div id="chart" class="chart-container"></div>
+      </div>
+
+      <div class="skills-group">
+        <ul id="skills-list"></ul>
+      </div>
+    </div>
+
+    <div class="about-group">
+      <h2>About header</h2>
+      <p>Text</p>
+    </div>
   </div>
 </body>
 
