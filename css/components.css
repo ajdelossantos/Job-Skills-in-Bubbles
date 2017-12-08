@@ -325,10 +325,9 @@ h3 {
 .skill-tooltip {
   color: #fff;
   border: none;
-  border-right: 1px solid #fff;
   background-color: transparent;
   position: relative;
-  top: 5px;
+  top: 8px;
   left: 20px;
 }
 
