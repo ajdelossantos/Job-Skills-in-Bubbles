@@ -323,9 +323,23 @@ h3 {
 }
 
 .skill-tooltip {
+  color: #fff;
   border: none;
+  border-right: 1px solid #fff;
   background-color: transparent;
   position: relative;
   top: 5px;
   left: 20px;
+}
+
+.about-header {
+  font-size: 36px;
+  font-weight: 300;
+  letter-spacing: 3px;
+}
+
+.about-text {
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
 }
