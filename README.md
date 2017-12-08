@@ -46,12 +46,11 @@ project timeframe, full skills database functionality is out of scope._)
 
 Users will be able to
 
-* [ ] Find job titles that contain a certain string
-* [ ] Search for the 'official' normalized name of a job
-* [ ] See jobs related to a normalized job
-* [ ] See skills related to a job _ [ ] Skills have a normalized name and
-      description _ [ ] Skills are ordered by O\*NET 'importance' (scaled 1-5)
-      then 'level' (scaled 1-7)
+* [ ] Find job titles that contain a certain job-title-string
+* [ ] See skills related to a job
+* [ ] Skills have a normalized name and description
+* [ ] Skills are ordered by O\*NET 'importance' (scaled 1-5) then 'level'
+      (scaled 1-7)
 * [ ] Job search results and their relevant skills will have a 'list' and
       'graphical' view that can be interacted with
 
@@ -61,7 +60,9 @@ In addition, this project will include:
 
 ### Wireframes
 
-<br><br>
+### (_Deprecated_)
+
+<br>
 
 #### Graphical View
 
@@ -81,8 +82,8 @@ This project will be implemented with the following technologies:
 
 * React-Redux to manage global state of 'job' and 'skill' objects fetched by API
   requests
-* JQuery for AJAX requests
-* HTML5 Canvas for graphical representations of connected jobs and skills
+* JQuery for AJAX requests and DOM manipulation
+* D3.js for bubble representations of connected job-skills
 
 ### Timeframe
 
@@ -91,24 +92,23 @@ This project will be implemented with the following technologies:
 * [x] Research project and experiment with API and existing SwaggerUI
 * [x] Build proposal
 * [x] Build frontend skeleton
-* [ ] Write API utility calls
-* [ ] Build redux-cycle for skill and job object
+* [x] Write API utility calls
 
 **Day 2**:
 
-* [ ] Learn Canvas graphing-data tutorials
-* [ ] Build search forms
-* [ ] Build list items for jobs and skills
-* [ ] Choose and design graphical elements best suited for data
+* [x] Learn D3 graphing-data tutorials
+* [x] Build search forms
+* [x] Build list items for jobs and skills
 
 **Day 3**:
 
-* [ ] Build graphics views for jobs and skills
+* [x] Build graphics views for jobs and skills
+* [x] Integrate API calls into search and graph
 
 **Day 4**:
 
-* [ ] Finish building graphics for jobs and skills
-* [ ] Style out UI and components
+* [x] Finish building graphics for jobs and skills
+* [x] Style out UI and components
 
 **Day 5**
 
@@ -120,9 +120,7 @@ This project will be implemented with the following technologies:
 
 * [ ] Search support for skills
 * [ ] Raw JSON output
+* [ ] Search for the 'official' normalized name of a job
+* [ ] See jobs related to a normalized job
 
 <br>
-
-_NB: D3 may be considered for more powerful, scalable data-visualizations and
-Webpack to manage any resulting scripts. However, it's likeky "shooting at
-little birds with big guns."_

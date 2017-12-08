@@ -13,7 +13,6 @@ export const renderSkills = () => {
   clearSkillsList();
 
   let jobTitle = getJob().job_title;
-  console.log("jobTitle");
 
   $("#title").append(`<h2>${jobTitle}</h2>`);
 
@@ -50,7 +49,10 @@ export const renderSkills = () => {
   );
 };
 
-const clearSkillsList = () => $("#skills-list").empty();
+const clearSkillsList = () => {
+  $("#skills-list").empty();
+  $("#title").empty();
+};
 
 export const skillBubbleChart = () => {
   $("#chart").empty();
@@ -89,10 +91,24 @@ export const skillBubbleChart = () => {
       })
     );
 
-  const tooltip = d3
-    .select("#graphic-group")
-    .append("div")
-    .attr("class", "skill-tooltip");
+  let tooltip;
+
+  if (document.getElementById("skill-tooltip") === null) {
+    tooltip = d3
+      .select("#graphic-group")
+      .append("div")
+      .attr("class", "skill-tooltip")
+      .attr("id", "skill-tooltip");
+  } else {
+    let div = document.getElementById("skill-tooltip");
+    div.parentNode.removeChild(div);
+
+    tooltip = d3
+      .select("#graphic-group")
+      .append("div")
+      .attr("class", "skill-tooltip")
+      .attr("id", "skill-tooltip");
+  }
 
   const render = datapoints => {
     let circles = svg

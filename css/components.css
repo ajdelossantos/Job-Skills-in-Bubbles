@@ -1,30 +1,20 @@
-/* Blues
-#6C7BFC
-#353C7B
-#2038FB
-#1A2CC8
-#101B7B
-*/
-
-/* Whites
-#FDFDFD
-#FBFBFB
-#FBFBFB
-#7B786B
-#C8C8C8
-*/
-
 body {
   color: rgba(0, 0, 0, 0.85);
   background-color: #fdfdfd;
   font-family: "Raleway", sans-serif;
 }
 
-h2 {
+h2,
+h3 {
   font-weight: 300;
   letter-spacing: 3px;
   font-size: 18px;
   text-align: center;
+}
+
+h3 {
+  font-weight: 700;
+  font-size: 16px;
 }
 
 ::-webkit-scrollbar {
@@ -63,6 +53,29 @@ h2 {
   background-color: #6c7bfc;
 }
 
+#title {
+  position: relative;
+  top: 10px;
+  font-weight: 700;
+  color: #fdfdfd;
+}
+
+.background-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 1341px;
+  width: 100%;
+  background-image: linear-gradient(
+      rgba(199, 199, 199, 0.95),
+      rgba(199, 199, 199, 0.95)
+    ),
+    url("../docs/work.jpg");
+  background-size: cover;
+  z-index: -1;
+  box-shadow: 0px 2px 5px 1px rgb(183, 185, 197);
+}
+
 .main,
 .header-group,
 .info-group,
@@ -77,10 +90,69 @@ h2 {
   margin: 0 auto;
 }
 
+.header-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.header-group {
+  border-bottom: 1px solid rgba(207, 208, 235, 0.8);
+}
+
+.title h2 {
+  font-size: 48px;
+  color: rgba(0, 0, 0, 0.85);
+}
+
+.title {
+  margin-bottom: 24px;
+}
+
+.title,
+.instructions {
+  display: flex;
+  flex: 1;
+}
+
+.instructions {
+  max-width: 900px;
+  width: 100%;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.legend {
+  border: 1px solid rgba(10, 23, 124, 0.25);
+  border-radius: 2px;
+  background-image: linear-gradient(
+    rgba(10, 23, 124, 0.25),
+    rgba(10, 23, 124, 0.25)
+  );
+  color: #f0f0f0;
+  width: 1100px;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.h-flex-1,
+.h-flex-2,
+.h-flex-3 {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+}
+
 .header-group,
 .info-group {
   flex-direction: row;
   max-width: 1100px;
+  margin-bottom: 40px;
 }
 
 .header-group {
@@ -129,6 +201,7 @@ h2 {
   border-bottom: 1px solid #eee;
   border-top: 1px solid #eee;
 }
+
 .search-group,
 .skills-group {
   box-sizing: border-box;
@@ -250,9 +323,9 @@ h2 {
 }
 
 .skill-tooltip {
-  border: none;
+  border: 1px dashed red;
   background-color: transparent;
   position: relative;
-  top: 20px;
+  top: 5px;
   left: 20px;
 }
