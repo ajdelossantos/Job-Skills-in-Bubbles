@@ -3,14 +3,16 @@ import * as SkillsGraphics from "./skills_graphics";
 export const fetchNormalizedJob = jobString =>
   $.ajax({
     method: "GET",
-    url: `http://api.dataatwork.org/v1/jobs/autocomplete?contains=${jobString}`,
+    url: `https://api.dataatwork.org/v1/jobs/autocomplete?contains=${
+      jobString
+    }`,
     dataType: "json"
   });
 
 export const fetchJobSkills = uuid =>
   $.ajax({
     method: "GET",
-    url: `http://api.dataatwork.org/v1/jobs/${uuid}/related_skills`,
+    url: `https://api.dataatwork.org/v1/jobs/${uuid}/related_skills`,
     dataType: "json"
   });
 

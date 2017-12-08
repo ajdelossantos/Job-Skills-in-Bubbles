@@ -323,7 +323,6 @@ h3 {
 }
 
 .skill-tooltip {
-  border: 1px dashed red;
   background-color: transparent;
   position: relative;
   top: 5px;

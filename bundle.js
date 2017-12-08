@@ -5029,7 +5029,7 @@ function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj;
 var fetchNormalizedJob = exports.fetchNormalizedJob = function fetchNormalizedJob(jobString) {
   return $.ajax({
     method: "GET",
-    url: "http://api.dataatwork.org/v1/jobs/autocomplete?contains=" + jobString,
+    url: "https://api.dataatwork.org/v1/jobs/autocomplete?contains=" + jobString,
     dataType: "json"
   });
 };
@@ -5037,7 +5037,7 @@ var fetchNormalizedJob = exports.fetchNormalizedJob = function fetchNormalizedJo
 var fetchJobSkills = exports.fetchJobSkills = function fetchJobSkills(uuid) {
   return $.ajax({
     method: "GET",
-    url: "http://api.dataatwork.org/v1/jobs/" + uuid + "/related_skills",
+    url: "https://api.dataatwork.org/v1/jobs/" + uuid + "/related_skills",
     dataType: "json"
   });
 };
