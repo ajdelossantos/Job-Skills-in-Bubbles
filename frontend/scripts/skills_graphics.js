@@ -47,8 +47,8 @@ export const skillBubbleChart = () => {
   $("#chart").empty();
 
   const chart = document.querySelector("#chart");
-  const width = 900;
-  const height = 900;
+  const width = 600;
+  const height = 600;
 
   const svg = d3
     .select("#chart")
@@ -62,7 +62,7 @@ export const skillBubbleChart = () => {
   const radiusScale = d3
     .scaleLinear()
     .domain([1, 5])
-    .range([5, 60]);
+    .range([3, 42]);
 
   const colorScale = d3
     .scaleLinear()

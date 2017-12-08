@@ -52,6 +52,7 @@ export const populateSearchResult = jobs => {
     );
     $(`#${job.uuid}`).click(() => {
       // console.log(job.uuid);
+      event.preventDefault();
       return receiveJobSkills(job.uuid);
     });
   });
