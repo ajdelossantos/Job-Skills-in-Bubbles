@@ -114,7 +114,7 @@ export const skillBubbleChart = () => {
 
   circles.forEach(circle => {
     circle.addEventListener("mouseover", event => {
-      console.log("hello");
+      console.log(event);
     });
   });
 };
