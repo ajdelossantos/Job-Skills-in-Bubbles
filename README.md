@@ -1,8 +1,8 @@
 ## Job Skills in Bubbles
 
-####[An interactive take on what skills matter to what jobs.](Link)
+#### [An interactive take on what skills matter to what jobs.](https://ajdelossantos.github.io/Job-Skills-in-Bubbles/)
 
-![Welcome](link)
+![Welcome](https://raw.githubusercontent.com/ajdelossantos/Job-Skills-in-Bubbles/master/docs/welcome.png)
 
 ### Background and Overview
 
@@ -69,13 +69,13 @@ In addition, this project will include:
 #### Graphical View
 
 <br>
-![Graphical View](link)
+![Graphical View](https://raw.githubusercontent.com/ajdelossantos/Job-Skills-in-Bubbles/master/docs/skill-graphics.png)
 <br>
 
 #### List View
 
 <br>
-![List View](link)
+![List View](https://raw.githubusercontent.com/ajdelossantos/Job-Skills-in-Bubbles/master/docs/job-list.png)
 <br>
 
 ### Architecture and Technologies
