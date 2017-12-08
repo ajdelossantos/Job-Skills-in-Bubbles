@@ -63,19 +63,21 @@ Users may
 
 In addition, this project will include:
 
-* [ ] An About page that describes motivation and links to the project's
-      organization <br>
+* An About page that describes motivation and links to the project's
+  organization
+
+<br>
 
 #### Graphical View
 
 <br>
-![Graphical View](https://raw.githubusercontent.com/ajdelossantos/Job-Skills-in-Bubbles/master/docs/skill-graphics.png)
+![Graphical_View](https://raw.githubusercontent.com/ajdelossantos/Job-Skills-in-Bubbles/master/docs/skill-graphics.png)
 <br>
 
 #### List View
 
 <br>
-![List View](https://raw.githubusercontent.com/ajdelossantos/Job-Skills-in-Bubbles/master/docs/job-list.png)
+![List_View](https://raw.githubusercontent.com/ajdelossantos/Job-Skills-in-Bubbles/master/docs/job-list.png)
 <br>
 
 ### Architecture and Technologies
