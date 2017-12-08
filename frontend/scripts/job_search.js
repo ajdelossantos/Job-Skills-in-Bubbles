@@ -25,13 +25,11 @@ export const handleJob = payload => {
   clearSearchResult();
   populateSearchResult(jobsList);
   clearSearchInput();
-  // console.log(jobsList);
   return jobsList;
 };
 
 export const assignCurrentJob = payload => {
   currentJob = payload;
-  // console.log(currentJob);
   SkillsGraphics.renderSkills();
   SkillsGraphics.skillBubbleChart();
   return currentJob;
@@ -51,7 +49,6 @@ export const populateSearchResult = jobs => {
       </li>`
     );
     $(`#${job.uuid}`).click(() => {
-      // console.log(job.uuid);
       event.preventDefault();
       return receiveJobSkills(job.uuid);
     });

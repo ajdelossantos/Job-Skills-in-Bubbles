@@ -18,12 +18,16 @@ export const renderSkills = () => {
     $("#skills-list").append(
       `
         <div class="skills-list-box">
-          <li data-skillUuid=${skill.skill_uuid} class="skills-li">
-          <header>rank #${idx + 1}</header>
+          <li id="li-${skill.skill_uuid}" class="skills-li">
             <ul class="skills-details">
-              <li>${skill.skill_name}</li>
-              <li>${skill.description}</li>
-              <div class="skills-scores">
+              <div class="skill-flex-1">
+                <li>rank #${idx + 1}</li>
+                <li>${skill.skill_name}</li>
+              </div>
+              <div class="skill-flex-2">
+                <li>${skill.description}</li>
+              </div>
+              <div class="skills-scores skill-flex-3">
                 <div class="skills-imp">
                   <li>importance</li>
                   <li>${skill.importance}</li>
@@ -80,6 +84,11 @@ export const skillBubbleChart = () => {
       })
     );
 
+  const tooltip = d3
+    .select("#graphic-group")
+    .append("div")
+    .attr("class", "skill-tooltip");
+
   const render = datapoints => {
     let circles = svg
       .selectAll(".skill")
@@ -113,8 +122,12 @@ export const skillBubbleChart = () => {
   let circles = document.querySelectorAll("circle");
 
   circles.forEach(circle => {
-    circle.addEventListener("mouseover", event => {
-      console.log(event);
+    circle.addEventListener("mousemove", event => {
+      let skillItem = document.getElementById(`li-${circle.id}`);
+      tooltip.html(skillItem.innerHTML).style("display", "block");
+    });
+    circle.addEventListener("mouseout", event => {
+      tooltip.html("<span>&nbsp;</span>").style("display", "none");
     });
   });
 };
