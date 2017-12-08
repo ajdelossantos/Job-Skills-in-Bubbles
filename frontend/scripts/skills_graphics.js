@@ -12,6 +12,11 @@ const testSkills = test.skills;
 export const renderSkills = () => {
   clearSkillsList();
 
+  let jobTitle = getJob().job_title;
+  console.log("jobTitle");
+
+  $("#title").append(`<h2>${jobTitle}</h2>`);
+
   let skills = getJob().skills;
 
   skills.forEach((skill, idx) =>
