@@ -2,22 +2,16 @@
 // Much of the D3 code is skeleton from their instructional work
 
 import { getJob } from "./job_search";
-import { test } from "../../docs/test-data";
 import * as d3 from "d3";
-import d3Drag from "d3-drag";
 import { scaleLinear } from "d3-scale";
-
-const testSkills = test.skills;
 
 export const renderSkills = () => {
   clearSkillsList();
 
   let jobTitle = getJob().job_title;
-
   $("#title").append(`<h2>${jobTitle}</h2>`);
 
   let skills = getJob().skills;
-
   skills.forEach((skill, idx) =>
     $("#skills-list").append(
       `
