@@ -64,7 +64,7 @@ h3 {
   position: absolute;
   top: 0;
   left: 0;
-  height: 1341px;
+  height: 1336px;
   width: 100%;
   background-image: linear-gradient(
       rgba(199, 199, 199, 0.95),
@@ -185,12 +185,6 @@ h3 {
   justify-content: space-between;
   height: 900px;
   border-radius: 2px;
-  box-shadow: 0px 2px 5px 1px rgb(183, 185, 197);
-}
-
-.search-group,
-#graphic-group {
-  border-right: 1px solid #ddd;
 }
 
 .search-group {

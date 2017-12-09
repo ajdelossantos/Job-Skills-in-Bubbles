@@ -20,8 +20,8 @@ The Open Skills Project database is a well-maintained database that catalogs
 jobs and skills and connects them together based on data extracted and
 aggregated from public and private sources (i.e. CareerBuilder, et al). It is
 analagous in role and quality to the data collected by the Bureau of Labor
-Statistics; both attempt to represent the labor market and figure out what are
-jobs called, and what skills are relevant to those jobs?
+Statistics; both attempt to represent the labor market and ask: what are jobs
+called, and what skills are relevant to those jobs?
 
 [Open Skills Project API](http://api.dataatwork.org/v1/spec/)
 
@@ -45,7 +45,7 @@ string. Each valid job in the database has a ranking of 119 core job-skills.
 Clicking on a job title displays a bubble chart of those job-skills and a ranked
 listing of those skills. Every skill carries two metrics:
 
-* `importance:float // range [1, 5]` representing a skill' s importance to job
+* `importance:float // range [1, 5]` representing a skill's importance to job
   success; importance correlates linearly to size
 * `level:float // range [0, 7]` representing a skill's expertise level required
   for job success; level correlates to color, on a scale from purple < red <
