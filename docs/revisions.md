@@ -12,3 +12,7 @@
               - [] study D3 tooltips to place on hover dynamically
     * Bonus
         - [] Add second chart for comparison
+- [] Revamp Layout
+  * Reimplement using CSS Grid + Flexbox
+  - [] Bring chart to top
+  - [] Devise better way to present job skills list 
