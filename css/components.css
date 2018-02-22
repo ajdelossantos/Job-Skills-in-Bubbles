@@ -169,14 +169,15 @@ h3 {
 .about-group {
   box-sizing: border-box;
   color: rgba(225, 225, 255, 0.9);
-  padding: 20px;
+  padding: 40px;
   flex-direction: column;
-  margin-bottom: 50px;
   background-color: #45377b;
   border: 1px solid #45377b;
   border-radius: 2px;
   box-shadow: 0px 2px 5px 1px rgb(183, 185, 197);
-  padding: 40px;
+  /* Height declaration for modal */
+  height: 100%;
+  max-height: 700px;
 }
 
 .info-group {
