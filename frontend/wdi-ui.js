@@ -15,14 +15,12 @@ const body = document.body;
 const modal = document.querySelector('.modal');
 const aboutToggle = document.getElementById('about-toggle');
 
-function hideAboutModal(e) {
-  modal.classList.add('hidden');
+function hideAboutModal() {
+  modal.classList.remove('hidden');
 }
 
-function displayAboutModal(e) {
-  e.preventDefault;
+function displayAboutModal() {
   console.log('clicked');
-  console.log(e.target);
   modal.classList.toggle('hidden');
 }
 

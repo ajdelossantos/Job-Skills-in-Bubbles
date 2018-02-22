@@ -10125,13 +10125,12 @@ var body = document.body;
 var modal = document.querySelector('.modal');
 var aboutToggle = document.getElementById('about-toggle');
 
-function hideAboutModal(e) {
-  modal.classList.add('hidden');
+function hideAboutModal() {
+  modal.classList.remove('hidden');
 }
 
-function displayAboutModal(e) {
+function displayAboutModal() {
   console.log('clicked');
-  console.log(e.target);
   modal.classList.toggle('hidden');
 }
 
