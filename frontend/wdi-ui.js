@@ -9,3 +9,14 @@ document.addEventListener("DOMContentLoaded", () => {
     );
   });
 });
+
+
+const body = document.body;
+
+function handleAboutModal(e) {
+  console.log('clicked');
+  console.log(e.target);
+}
+
+body.addEventListener('click', handleAboutModal);
+
