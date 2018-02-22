@@ -10122,13 +10122,21 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 var body = document.body;
+var modal = document.querySelector('.modal');
+var aboutToggle = document.getElementById('about-toggle');
 
-function handleAboutModal(e) {
-  console.log('clicked');
-  console.log(e.target);
+function hideAboutModal(e) {
+  modal.classList.add('hidden');
 }
 
-body.addEventListener('click', handleAboutModal);
+function displayAboutModal(e) {
+  console.log('clicked');
+  console.log(e.target);
+  modal.classList.toggle('hidden');
+}
+
+body.addEventListener('click', hideAboutModal);
+aboutToggle.addEventListener('click', displayAboutModal);
 
 /***/ }),
 /* 176 */

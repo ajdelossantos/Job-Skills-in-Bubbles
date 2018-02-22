@@ -12,11 +12,20 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 const body = document.body;
+const modal = document.querySelector('.modal');
+const aboutToggle = document.getElementById('about-toggle');
 
-function handleAboutModal(e) {
-  console.log('clicked');
-  console.log(e.target);
+function hideAboutModal(e) {
+  modal.classList.add('hidden');
 }
 
-body.addEventListener('click', handleAboutModal);
+function displayAboutModal(e) {
+  e.preventDefault;
+  console.log('clicked');
+  console.log(e.target);
+  modal.classList.toggle('hidden');
+}
+
+body.addEventListener('click', hideAboutModal);
+aboutToggle.addEventListener('click', displayAboutModal);
 
