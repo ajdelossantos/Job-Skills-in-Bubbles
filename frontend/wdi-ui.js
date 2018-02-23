@@ -15,13 +15,18 @@ const body = document.body;
 const modal = document.querySelector('.modal');
 const aboutToggle = document.getElementById('about-toggle');
 
-function hideAboutModal() {
-  modal.classList.remove('hidden');
+function hideAboutModal(e) {
+  e.stopPropagation();
+  console.log('hide');
+  console.log(modal.classList);
+  modal.classList.add('hidden');
 }
 
-function displayAboutModal() {
-  console.log('clicked');
-  modal.classList.toggle('hidden');
+function displayAboutModal(e) {
+  e.stopPropagation();
+  console.log('display');
+  console.log(modal.classList);
+  modal.classList.remove('hidden');
 }
 
 body.addEventListener('click', hideAboutModal);
