@@ -4,12 +4,12 @@ import * as d3 from "d3";
 document.addEventListener("DOMContentLoaded", () => {
   const searchBtn = document.getElementById('search-btn');
   const searchField = document.getElementById('search');
+  const aboutToggle = document.getElementById('about-toggle');
   const modalScreen = document.querySelector('.modal-screen');
   const modal = document.querySelector('.modal');
-  const aboutToggle = document.getElementById('about-toggle');
+  const aboutClose = document.querySelector('.about__close');
 
   function handleSearch() {
-    console.log(searchField.value);
     JobSearch.fetchNormalizedJob(searchField.value)
     .then(response => JobSearch.handleJob(response));
   }
@@ -25,6 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   modalScreen.addEventListener('click', hideAboutModal);
+  aboutClose.addEventListener('click', hideAboutModal);
   aboutToggle.addEventListener('click', displayAboutModal);
   searchBtn.addEventListener('click', handleSearch);
 });

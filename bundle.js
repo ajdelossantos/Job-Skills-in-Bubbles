@@ -10115,12 +10115,12 @@ function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj;
 document.addEventListener("DOMContentLoaded", function () {
   var searchBtn = document.getElementById('search-btn');
   var searchField = document.getElementById('search');
+  var aboutToggle = document.getElementById('about-toggle');
   var modalScreen = document.querySelector('.modal-screen');
   var modal = document.querySelector('.modal');
-  var aboutToggle = document.getElementById('about-toggle');
+  var aboutClose = document.querySelector('.about__close');
 
   function handleSearch() {
-    console.log(searchField.value);
     JobSearch.fetchNormalizedJob(searchField.value).then(function (response) {
       return JobSearch.handleJob(response);
     });
@@ -10137,6 +10137,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   modalScreen.addEventListener('click', hideAboutModal);
+  aboutClose.addEventListener('click', hideAboutModal);
   aboutToggle.addEventListener('click', displayAboutModal);
   searchBtn.addEventListener('click', handleSearch);
 });

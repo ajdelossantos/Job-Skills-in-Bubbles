@@ -347,3 +347,20 @@ h3 {
   height: 100%;
   width: 100%;
 }
+
+.about__close {
+display: flex;
+    position: absolute;
+    left: 1035px;
+    top: 5px;
+    font-size: 48px;
+    height: 50px;
+    width: 50px;
+    align-items: center;
+    justify-content: center;
+}
+
+.about__close:hover {
+  color: red;
+  cursor: pointer;
+}
