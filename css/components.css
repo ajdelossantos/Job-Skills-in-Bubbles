@@ -168,17 +168,32 @@ h3 {
 
 .about-group {
   box-sizing: border-box;
-  color: rgba(225, 225, 255, 0.9);
+  color: rgba(0, 0, 0, .85);
   padding: 40px;
   flex-direction: column;
-  background-color: #45377b;
+  background: hsla(0, 0%, 100%, .6);
   border: 1px solid #45377b;
   border-radius: 2px;
-  /* box-shadow: 0px 2px 5px 1px rgb(183, 185, 197); */
+  margin-top: 200px;
   /* Height declaration for modal */
   height: 100%;
   max-height: 700px;
   z-index: 10;
+  overflow: hidden;
+}
+
+/* frosted-glass effect */
+.about-group::before {
+  background: linear-gradient(
+      rgba(199, 199, 199, 0.5),
+      rgba(199, 199, 199, 0.5)
+    ), url("../docs/work.jpg") 0 / cover fixed;
+  z-index: -1;
+  content: '';
+  position: absolute;
+  top: 0; right: 0; bottom: 0; left: 0;
+  filter: blur(35px);
+  margin: -30px;
 }
 
 .info-group {
