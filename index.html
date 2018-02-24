@@ -15,11 +15,15 @@
 
 <body>
   <div class="main">
+    <hgroup class="header">
+      <span id='about-toggle' class='modal__btn'>About</span>
+      <div class="header__title">
+        <h2>Job Skills in Bubbles</h2>
+      </div>
+    </hgroup>
+
     <div class="header-group">
-      <hgroup class="header-box">
-        <div class="title">
-          <h2>Job Skills in Bubbles</h2>
-        </div>
+      <hgroup>
         <div class="instructions">
           <h3 class="h-flex-1">find a job</h3>
           <h3 class="h-flex-2">select a job</h3>
@@ -59,8 +63,11 @@
         <ul id="skills-list"></ul>
       </div>
     </div>
+  </div>
 
-    <div class="about-group">
+  <div class='modal hidden'>
+    <div class="about-group absolute-center">
+      <span class='about__close'>&times</span>
       <h2 class="about-header">about</h2>
       <p class="about-text">
         Data at Work is about enabling an open 21st century workforce data ecosystem... by developing datasets, tools, standards,
@@ -88,7 +95,9 @@
         visualization of 119 core job skills to help everyday users understand the language of the job market and ultimately
         help them find a job.</p>
     </div>
+    <div class='modal-screen'></div>
   </div>
 </body>
+
 
 </html>
