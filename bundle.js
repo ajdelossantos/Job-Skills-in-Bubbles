@@ -10113,34 +10113,33 @@ var d3 = _interopRequireWildcard(_d);
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
 document.addEventListener("DOMContentLoaded", function () {
-  $("#search-btn").click(function () {
-    var searchField = $("#search").val();
-    JobSearch.fetchNormalizedJob(searchField).then(function (response) {
+  var searchBtn = document.getElementById('search-btn');
+  var searchField = document.getElementById('search');
+  var modalScreen = document.querySelector('.modal-screen');
+  var modal = document.querySelector('.modal');
+  var aboutToggle = document.getElementById('about-toggle');
+
+  function handleSearch() {
+    console.log(searchField.value);
+    JobSearch.fetchNormalizedJob(searchField.value).then(function (response) {
       return JobSearch.handleJob(response);
     });
-  });
+  }
+
+  function hideAboutModal(e) {
+    e.stopPropagation();
+    modal.classList.add('hidden');
+  }
+
+  function displayAboutModal(e) {
+    e.stopPropagation();
+    modal.classList.remove('hidden');
+  }
+
+  modalScreen.addEventListener('click', hideAboutModal);
+  aboutToggle.addEventListener('click', displayAboutModal);
+  searchBtn.addEventListener('click', handleSearch);
 });
-
-var body = document.body;
-var modal = document.querySelector('.modal');
-var aboutToggle = document.getElementById('about-toggle');
-
-function hideAboutModal(e) {
-  e.stopPropagation();
-  console.log('hide');
-  console.log(modal.classList);
-  modal.classList.add('hidden');
-}
-
-function displayAboutModal(e) {
-  e.stopPropagation();
-  console.log('display');
-  console.log(modal.classList);
-  modal.classList.remove('hidden');
-}
-
-body.addEventListener('click', hideAboutModal);
-aboutToggle.addEventListener('click', displayAboutModal);
 
 /***/ }),
 /* 176 */
