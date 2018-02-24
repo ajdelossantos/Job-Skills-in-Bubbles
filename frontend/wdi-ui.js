@@ -4,6 +4,7 @@ import * as d3 from "d3";
 document.addEventListener("DOMContentLoaded", () => {
   const searchBtn = document.getElementById('search-btn');
   const searchField = document.getElementById('search');
+
   const aboutToggle = document.getElementById('about-toggle');
   const modalScreen = document.querySelector('.modal-screen');
   const modal = document.querySelector('.modal');
@@ -24,8 +25,9 @@ document.addEventListener("DOMContentLoaded", () => {
     modal.classList.remove('hidden');
   }
 
+  searchBtn.addEventListener('click', handleSearch);
+
   modalScreen.addEventListener('click', hideAboutModal);
   aboutClose.addEventListener('click', hideAboutModal);
   aboutToggle.addEventListener('click', displayAboutModal);
-  searchBtn.addEventListener('click', handleSearch);
 });

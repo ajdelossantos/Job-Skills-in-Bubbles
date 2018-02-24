@@ -10115,6 +10115,7 @@ function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj;
 document.addEventListener("DOMContentLoaded", function () {
   var searchBtn = document.getElementById('search-btn');
   var searchField = document.getElementById('search');
+
   var aboutToggle = document.getElementById('about-toggle');
   var modalScreen = document.querySelector('.modal-screen');
   var modal = document.querySelector('.modal');
@@ -10136,10 +10137,11 @@ document.addEventListener("DOMContentLoaded", function () {
     modal.classList.remove('hidden');
   }
 
+  searchBtn.addEventListener('click', handleSearch);
+
   modalScreen.addEventListener('click', hideAboutModal);
   aboutClose.addEventListener('click', hideAboutModal);
   aboutToggle.addEventListener('click', displayAboutModal);
-  searchBtn.addEventListener('click', handleSearch);
 });
 
 /***/ }),
