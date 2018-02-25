@@ -10121,6 +10121,8 @@ document.addEventListener("DOMContentLoaded", function () {
   var modal = document.querySelector('.modal');
   var aboutClose = document.querySelector('.about__close');
 
+  var aboutGroup = document.querySelector('.about-group');
+
   function handleSearch() {
     JobSearch.fetchNormalizedJob(searchField.value).then(function (response) {
       return JobSearch.handleJob(response);
@@ -10137,11 +10139,25 @@ document.addEventListener("DOMContentLoaded", function () {
     modal.classList.remove('hidden');
   }
 
+  function showAboutGroup(e) {
+    e.stopPropagation();
+    aboutGroup.classList.add('active');
+  }
+
+  function hideAboutGroup(e) {
+    e.stopPropagation();
+    aboutGroup.classList.remove('active');
+  }
+
   searchBtn.addEventListener('click', handleSearch);
 
   modalScreen.addEventListener('click', hideAboutModal);
+  modalScreen.addEventListener('click', hideAboutGroup);
   aboutClose.addEventListener('click', hideAboutModal);
+  aboutClose.addEventListener('click', hideAboutGroup);
+
   aboutToggle.addEventListener('click', displayAboutModal);
+  aboutToggle.addEventListener('click', showAboutGroup);
 });
 
 /***/ }),

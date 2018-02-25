@@ -10,6 +10,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const modal = document.querySelector('.modal');
   const aboutClose = document.querySelector('.about__close');
 
+  const aboutGroup = document.querySelector('.about-group');
+
   function handleSearch() {
     JobSearch.fetchNormalizedJob(searchField.value)
     .then(response => JobSearch.handleJob(response));
@@ -25,9 +27,23 @@ document.addEventListener("DOMContentLoaded", () => {
     modal.classList.remove('hidden');
   }
 
+  function showAboutGroup(e) {
+    e.stopPropagation();
+    aboutGroup.classList.add('active');
+  }
+
+  function hideAboutGroup(e) {
+    e.stopPropagation();
+    aboutGroup.classList.remove('active');
+  }
+
   searchBtn.addEventListener('click', handleSearch);
 
   modalScreen.addEventListener('click', hideAboutModal);
+  modalScreen.addEventListener('click', hideAboutGroup);
   aboutClose.addEventListener('click', hideAboutModal);
+  aboutClose.addEventListener('click', hideAboutGroup);
+
   aboutToggle.addEventListener('click', displayAboutModal);
+  aboutToggle.addEventListener('click', showAboutGroup);
 });

@@ -180,6 +180,13 @@ h3 {
   max-height: 700px;
   z-index: 10;
   overflow: hidden;
+  /* transition */
+  opacity: 0;
+  transform: translateX(-30%) scale(0.95);
+  -webkit-transition: all .5s ease-out;
+  -moz-transition: all .5s ease-out;
+  -o-transition: all .5s ease-out;
+  transition: all .5s ease-out;
 }
 
 /* frosted-glass effect */
@@ -380,6 +387,18 @@ h3 {
   cursor: pointer;
 }
 
+.about__link {
+  padding: 2px 5px;
+}
+
+.about__link:hover {
+  color: rgba(10, 23, 124, 0.85);
+  font-weight: 700;
+  background: #fdfdfd;
+  border: 1px solid #fdfdfd;
+  border-radius: 2px;
+}
+
 .modal__btn {
   background: rgba(10, 23, 124, 0.85);
   color: #fdfdfd;
@@ -395,4 +414,18 @@ h3 {
   color: rgba(10, 23, 124, 0.85);
   background: rgba(10, 23, 124, 0.25);
   border-color: rgba(10, 23, 124, 0.85);
+}
+
+/* .slide-in {
+  opacity: 0;
+  transform: translateX(-30%) scale(0.95);
+  transition: all .5s ease-out;
+} */
+
+/* .about-group.slide-in {
+} */
+
+.about-group.active {
+  opacity: 1;
+  transform: translateX(0%) scale(1);
 }
