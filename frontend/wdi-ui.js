@@ -29,7 +29,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function showAboutGroup(e) {
     e.stopPropagation();
-    aboutGroup.classList.add('active');
+    setTimeout(() => {
+      aboutGroup.classList.add('active');
+    },500);
   }
 
   function hideAboutGroup(e) {

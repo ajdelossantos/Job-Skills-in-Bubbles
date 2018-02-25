@@ -10141,7 +10141,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function showAboutGroup(e) {
     e.stopPropagation();
-    aboutGroup.classList.add('active');
+    setTimeout(function () {
+      aboutGroup.classList.add('active');
+    }, 500);
   }
 
   function hideAboutGroup(e) {
