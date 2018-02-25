@@ -160,7 +160,6 @@ h3 {
 }
 
 .header-group,
-.about-group,
 .info-group {
   width: 1100px;
   margin-top: 20px;
@@ -172,12 +171,14 @@ h3 {
   padding: 40px;
   flex-direction: column;
   background: hsla(0, 0%, 100%, .6);
-  border: 1px solid #45377b;
+  border: 1px solid rgba(0, 0, 0, .85);
   border-radius: 2px;
-  margin-top: 200px;
+  width: 100%;
+  max-width: 1100px;
   /* Height declaration for modal */
+  /* breaks at 600 px */
   height: 100%;
-  max-height: 700px;
+  max-height: 1000px;
   z-index: 10;
   overflow: hidden;
 }
@@ -358,9 +359,17 @@ h3 {
   position: fixed;
   top: 0; right: 0; bottom: 0; right: 0;
   z-index: 5;
-  background: rgba(0, 0, 0, 0.85);
+  background: rgba(0, 0, 0, 0);
   height: 100%;
   width: 100%;
+  -webkit-transition: all .3s ease;
+  -moz-transition: all .3s ease;
+  -o-transition: all .3s ease;
+  transition: all .3s ease;
+}
+
+.modal-screen.active {
+  background: rgba(0, 0, 0, 0.85);
 }
 
 .about__close {
@@ -399,7 +408,10 @@ h3 {
   border:  rgba(10, 23, 124, 0.85);
   padding: 10px 20px;
   border-radius: 2px;
-  transition: all .3s ease;
+  -webkit-transition: all .3s ease-out;
+  -moz-transition: all .3s ease-out;
+  -o-transition: all .3s ease-out;
+  transition: all .3s ease-out;
 }
 
 .modal__btn:hover {

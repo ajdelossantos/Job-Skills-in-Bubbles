@@ -10132,22 +10132,25 @@ document.addEventListener("DOMContentLoaded", function () {
   function hideAboutModal(e) {
     e.stopPropagation();
     modal.classList.add('hidden');
+    modalScreen.classList.remove('active');
   }
 
   function displayAboutModal(e) {
     e.stopPropagation();
+    setTimeout(function () {
+      modalScreen.classList.add('active');
+    }, 100);
+
     modal.classList.remove('hidden');
   }
 
   function showAboutGroup(e) {
-    e.stopPropagation();
     setTimeout(function () {
       aboutGroup.classList.add('active');
-    }, 500);
+    }, 100);
   }
 
   function hideAboutGroup(e) {
-    e.stopPropagation();
     aboutGroup.classList.remove('active');
   }
 
