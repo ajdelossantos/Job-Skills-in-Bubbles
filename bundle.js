@@ -10104,48 +10104,11 @@ function transform(node) {
 
 var _handle_search = __webpack_require__(467);
 
+var _handle_about_modal = __webpack_require__(468);
+
 document.addEventListener("DOMContentLoaded", function () {
   (0, _handle_search.handleSearch)();
-
-  var aboutToggle = document.getElementById('about-toggle');
-  var modalScreen = document.querySelector('.modal-screen');
-  var modal = document.querySelector('.modal');
-  var aboutClose = document.querySelector('.about__close');
-
-  var aboutGroup = document.querySelector('.about-group');
-
-  function hideAboutModal(e) {
-    e.stopPropagation();
-    modal.classList.add('hidden');
-    modalScreen.classList.remove('active');
-  }
-
-  function displayAboutModal(e) {
-    e.stopPropagation();
-    setTimeout(function () {
-      modalScreen.classList.add('active');
-    }, 100);
-
-    modal.classList.remove('hidden');
-  }
-
-  function showAboutGroup(e) {
-    setTimeout(function () {
-      aboutGroup.classList.add('active');
-    }, 100);
-  }
-
-  function hideAboutGroup(e) {
-    aboutGroup.classList.remove('active');
-  }
-
-  modalScreen.addEventListener('click', hideAboutModal);
-  modalScreen.addEventListener('click', hideAboutGroup);
-  aboutClose.addEventListener('click', hideAboutModal);
-  aboutClose.addEventListener('click', hideAboutGroup);
-
-  aboutToggle.addEventListener('click', displayAboutModal);
-  aboutToggle.addEventListener('click', showAboutGroup);
+  (0, _handle_about_modal.handleAboutModal)();
 });
 
 /***/ }),
@@ -23283,6 +23246,60 @@ var handleSearch = exports.handleSearch = function handleSearch() {
   }
 
   searchBtn.addEventListener('click', fetchData);
+};
+
+/***/ }),
+/* 468 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+var handleAboutModal = exports.handleAboutModal = function handleAboutModal() {
+  var aboutToggle = document.getElementById('about-toggle');
+  var aboutClose = document.querySelector('.about__close');
+
+  var aboutGroup = document.querySelector('.about-group');
+
+  var modal = document.querySelector('.modal');
+  var modalScreen = document.querySelector('.modal-screen');
+
+  function hideAboutModal(e) {
+    e.stopPropagation();
+    modal.classList.add('hidden');
+    modalScreen.classList.remove('active');
+  }
+
+  function showAboutModal(e) {
+    e.stopPropagation();
+    setTimeout(function () {
+      modalScreen.classList.add('active');
+    }, 100);
+
+    modal.classList.remove('hidden');
+  }
+
+  function showAboutGroup(e) {
+    setTimeout(function () {
+      aboutGroup.classList.add('active');
+    }, 100);
+  }
+
+  function hideAboutGroup(e) {
+    aboutGroup.classList.remove('active');
+  }
+
+  modalScreen.addEventListener('click', hideAboutModal);
+  modalScreen.addEventListener('click', hideAboutGroup);
+
+  aboutClose.addEventListener('click', hideAboutModal);
+  aboutClose.addEventListener('click', hideAboutGroup);
+
+  aboutToggle.addEventListener('click', showAboutModal);
+  aboutToggle.addEventListener('click', showAboutGroup);
 };
 
 /***/ })
