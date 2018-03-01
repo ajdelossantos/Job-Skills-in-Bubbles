@@ -1,9 +1,7 @@
-import * as JobSearch from "./scripts/job_search";
-import * as d3 from "d3";
+import { handleSearch } from "./scripts/handle_search";
 
 document.addEventListener("DOMContentLoaded", () => {
-  const searchBtn = document.getElementById('search-btn');
-  const searchField = document.getElementById('search');
+  handleSearch();
 
   const aboutToggle = document.getElementById('about-toggle');
   const modalScreen = document.querySelector('.modal-screen');
@@ -11,11 +9,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const aboutClose = document.querySelector('.about__close');
 
   const aboutGroup = document.querySelector('.about-group');
-
-  function handleSearch() {
-    JobSearch.fetchNormalizedJob(searchField.value)
-    .then(response => JobSearch.handleJob(response));
-  }
 
   function hideAboutModal(e) {
     e.stopPropagation();
@@ -41,8 +34,6 @@ document.addEventListener("DOMContentLoaded", () => {
   function hideAboutGroup(e) {
     aboutGroup.classList.remove('active');
   }
-
-  searchBtn.addEventListener('click', handleSearch);
 
   modalScreen.addEventListener('click', hideAboutModal);
   modalScreen.addEventListener('click', hideAboutGroup);

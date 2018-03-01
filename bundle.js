@@ -10102,19 +10102,10 @@ function transform(node) {
 "use strict";
 
 
-var _job_search = __webpack_require__(90);
-
-var JobSearch = _interopRequireWildcard(_job_search);
-
-var _d = __webpack_require__(91);
-
-var d3 = _interopRequireWildcard(_d);
-
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+var _handle_search = __webpack_require__(467);
 
 document.addEventListener("DOMContentLoaded", function () {
-  var searchBtn = document.getElementById('search-btn');
-  var searchField = document.getElementById('search');
+  (0, _handle_search.handleSearch)();
 
   var aboutToggle = document.getElementById('about-toggle');
   var modalScreen = document.querySelector('.modal-screen');
@@ -10122,12 +10113,6 @@ document.addEventListener("DOMContentLoaded", function () {
   var aboutClose = document.querySelector('.about__close');
 
   var aboutGroup = document.querySelector('.about-group');
-
-  function handleSearch() {
-    JobSearch.fetchNormalizedJob(searchField.value).then(function (response) {
-      return JobSearch.handleJob(response);
-    });
-  }
 
   function hideAboutModal(e) {
     e.stopPropagation();
@@ -10153,8 +10138,6 @@ document.addEventListener("DOMContentLoaded", function () {
   function hideAboutGroup(e) {
     aboutGroup.classList.remove('active');
   }
-
-  searchBtn.addEventListener('click', handleSearch);
 
   modalScreen.addEventListener('click', hideAboutModal);
   modalScreen.addEventListener('click', hideAboutGroup);
@@ -23270,6 +23253,37 @@ function nopropagation() {
   __WEBPACK_IMPORTED_MODULE_0_d3_selection__["e" /* event */].stopImmediatePropagation();
 });
 
+
+/***/ }),
+/* 467 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.handleSearch = undefined;
+
+var _job_search = __webpack_require__(90);
+
+var JobSearch = _interopRequireWildcard(_job_search);
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+
+var handleSearch = exports.handleSearch = function handleSearch() {
+  var searchBtn = document.getElementById('search-btn');
+  var searchField = document.getElementById('search');
+
+  function fetchData() {
+    JobSearch.fetchNormalizedJob(searchField.value).then(function (response) {
+      return JobSearch.handleJob(response);
+    });
+  }
+
+  searchBtn.addEventListener('click', fetchData);
+};
 
 /***/ })
 /******/ ]);
