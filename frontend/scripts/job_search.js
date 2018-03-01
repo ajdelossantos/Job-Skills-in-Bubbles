@@ -45,10 +45,12 @@ export const receiveJobSkills = uuid => {
 export const populateSearchResult = jobs => {
   jobs.forEach(job => {
     $("#search-results").append(
-      `<li id=${job.uuid}>
-        <a data-jobUuid=${job.uuid} href="#">
-        ${job.suggestion}</a>
-      </li>`
+      `
+        <li id=${job.uuid}>
+          <a data-jobUuid=${job.uuid} href="#">
+          ${job.suggestion}</a>
+        </li>
+      `
     );
     $(`#${job.uuid}`).click(() => {
       event.preventDefault();

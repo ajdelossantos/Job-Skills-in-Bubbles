@@ -16,6 +16,7 @@ export const handleAboutModal = () => {
 
   function showAboutModal(e) {
     e.stopPropagation();
+
     setTimeout(() => {
       modalScreen.classList.add('active');
     }, 100);
@@ -26,7 +27,7 @@ export const handleAboutModal = () => {
   function showAboutGroup(e) {
     setTimeout(() => {
       aboutGroup.classList.add('active');
-    },100);
+    }, 100);
   }
 
   function hideAboutGroup(e) {

@@ -5081,7 +5081,7 @@ var receiveJobSkills = exports.receiveJobSkills = function receiveJobSkills(uuid
 
 var populateSearchResult = exports.populateSearchResult = function populateSearchResult(jobs) {
   jobs.forEach(function (job) {
-    $("#search-results").append("<li id=" + job.uuid + ">\n        <a data-jobUuid=" + job.uuid + " href=\"#\">\n        " + job.suggestion + "</a>\n      </li>");
+    $("#search-results").append("\n        <li id=" + job.uuid + ">\n          <a data-jobUuid=" + job.uuid + " href=\"#\">\n          " + job.suggestion + "</a>\n        </li>\n      ");
     $("#" + job.uuid).click(function () {
       event.preventDefault();
       return receiveJobSkills(job.uuid);
@@ -23275,6 +23275,7 @@ var handleAboutModal = exports.handleAboutModal = function handleAboutModal() {
 
   function showAboutModal(e) {
     e.stopPropagation();
+
     setTimeout(function () {
       modalScreen.classList.add('active');
     }, 100);

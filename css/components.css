@@ -405,7 +405,7 @@ h3 {
   background: rgba(10, 23, 124, 0.85);
   color: #fdfdfd;
   font-size: 24px;
-  border:  rgba(10, 23, 124, 0.85);
+  border: 1px solid rgba(10, 23, 124, 0.85);
   padding: 10px 20px;
   border-radius: 2px;
   -webkit-transition: all .3s ease-out;
