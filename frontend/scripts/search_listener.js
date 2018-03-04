@@ -1,6 +1,6 @@
 import * as JobSearch from "./job_search";
 
-export const handleSearch = () => {
+export const attachSearchListener = () => {
   const searchBtn = document.getElementById('search-btn');
   const searchField = document.getElementById('search');
 

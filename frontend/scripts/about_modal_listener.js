@@ -1,4 +1,4 @@
-export const handleAboutModal = () => {
+export const attachAboutModalListener = () => {
   const aboutToggle = document.getElementById('about-toggle');
   const aboutClose = document.querySelector('.about__close');
 

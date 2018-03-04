@@ -1,7 +1,9 @@
 // Special Thanks to Curran Kelleher, Jonathan Soma, and Mike Bostock for their D3 tutorials
 // Much of the D3 code is skeleton from their instructional work
 
+import { skillTooltip } from "../markup/tooltip";
 import { getJob } from "./job_search";
+
 import * as d3 from "d3";
 import { scaleLinear } from "d3-scale";
 
@@ -13,33 +15,8 @@ export const renderSkills = () => {
 
   let skills = getJob().skills;
   skills.forEach((skill, idx) =>
-    $("#skills-list").append(
-      `
-        <div class="skills-list-box">
-          <li id="li-${skill.skill_uuid}" class="skills-li">
-            <ul class="skills-details">
-              <div class="skill-flex-1">
-                <li>rank #${idx + 1}</li>
-                <li>${skill.skill_name}</li>
-              </div>
-              <div class="skill-flex-2">
-                <li>${skill.description}</li>
-              </div>
-              <div class="skills-scores skill-flex-3">
-                <div class="skills-imp">
-                  <li>importance</li>
-                  <li>${skill.importance}</li>
-                </div>
-                <div class="skills-lvl">
-                  <li>level</li>
-                  <li>${skill.level}</li>
-                </div>
-              </div>
-            </ul>
-          </li>
-        </div>
-      `
-    )
+    // skillTooltip(skill, idx) returns markup
+    $("#skills-list").append(skillTooltip(skill, idx))
   );
 };
 

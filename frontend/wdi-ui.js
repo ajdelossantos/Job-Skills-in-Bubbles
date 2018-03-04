@@ -1,7 +1,9 @@
-import { handleSearch } from "./scripts/handle_search";
-import { handleAboutModal } from "./scripts/handle_about_modal";
+import { attachSearchListener } from "./scripts/search_listener";
+import { attachAboutModalListener } from "./scripts/about_modal_listener";
+import { renderDefaultChart } from "./scripts/default_chart";
 
 document.addEventListener("DOMContentLoaded", () => {
-  handleSearch();
-  handleAboutModal();
+  renderDefaultChart();
+  attachSearchListener();
+  attachAboutModalListener();
 });

@@ -1,4 +1,6 @@
 import * as SkillsGraphics from "./skills_graphics";
+import { jobListItem } from "../markup/job_list_item";
+import { test } from "../util/test-data";
 
 export const fetchNormalizedJob = jobString =>
   $.ajax({
@@ -17,7 +19,7 @@ export const fetchJobSkills = uuid =>
   });
 
 let jobsList = [];
-let currentJob = [];
+let currentJob = test;
 
 export const getJobs = () => jobsList;
 export const getJob = () => currentJob;
@@ -44,15 +46,10 @@ export const receiveJobSkills = uuid => {
 
 export const populateSearchResult = jobs => {
   jobs.forEach(job => {
-    $("#search-results").append(
-      `
-        <li id=${job.uuid}>
-          <a data-jobUuid=${job.uuid} href="#">
-          ${job.suggestion}</a>
-        </li>
-      `
-    );
-    $(`#${job.uuid}`).click(() => {
+    // jobListItem(job) returns markup
+    $("#search-results").append(jobListItem(job));
+
+    $(`#${job.uuid}`).click((event) => {
       event.preventDefault();
       return receiveJobSkills(job.uuid);
     });
