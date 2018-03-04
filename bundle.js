@@ -9676,6 +9676,11 @@ var attachSearchListener = exports.attachSearchListener = function attachSearchL
   }
 
   searchBtn.addEventListener('click', fetchData);
+  window.addEventListener('keydown', function (e) {
+    if (e.key === "Enter") {
+      fetchData();
+    }
+  });
 };
 
 /***/ }),

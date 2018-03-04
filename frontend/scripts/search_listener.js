@@ -10,4 +10,9 @@ export const attachSearchListener = () => {
   }
 
   searchBtn.addEventListener('click', fetchData);
+  window.addEventListener('keydown', function(e) {
+    if (e.key === "Enter") {
+     fetchData();
+    }
+  });
 };
