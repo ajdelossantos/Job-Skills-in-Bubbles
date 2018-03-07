@@ -5,12 +5,15 @@ export const attachSearchListener = () => {
   const searchField = document.getElementById('search');
 
   function fetchData() {
+    console.log('fetch!');
     JobSearch.fetchNormalizedJob(searchField.value)
     .then(response => JobSearch.handleJob(response));
   }
 
   searchBtn.addEventListener('click', fetchData);
-  window.addEventListener('keydown', function(e) {
+  searchField.addEventListener('change', fetchData);
+
+  document.addEventListener('keydown', function(e) {
     if (e.key === "Enter") {
      fetchData();
     }
