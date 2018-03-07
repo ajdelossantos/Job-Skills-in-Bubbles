@@ -205,16 +205,12 @@ h3 {
   border-radius: 2px;
 }
 
-.search-group {
-  box-shadow: inset -5px 0px 5px -1px rgb(183, 185, 197);
-}
-
 #graphics-group {
   border-bottom: 1px solid #eee;
   border-top: 1px solid #eee;
 }
 
-.search-group,
+/* .search-group, */
 .skills-group {
   box-sizing: border-box;
   flex: 2.5;
@@ -229,7 +225,7 @@ h3 {
 }
 
 #search-results {
-  height: 700px;
+  height: 100%;
   overflow: auto;
   border-radius: 2px;
 }
