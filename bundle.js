@@ -9752,10 +9752,13 @@ var _about_modal_listener = __webpack_require__(471);
 
 var _default_chart = __webpack_require__(472);
 
+var _tooltip_on_hover = __webpack_require__(473);
+
 document.addEventListener("DOMContentLoaded", function () {
   (0, _default_chart.renderDefaultChart)();
   (0, _search_listener.attachSearchListener)();
   (0, _about_modal_listener.attachAboutModalListener)();
+  (0, _tooltip_on_hover.renderTooltipOnHover)();
 });
 
 /***/ }),
@@ -24227,6 +24230,31 @@ function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj;
 var renderDefaultChart = exports.renderDefaultChart = function renderDefaultChart() {
   SkillsGraphics.renderSkills();
   SkillsGraphics.skillBubbleChart();
+};
+
+/***/ }),
+/* 473 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+var renderTooltipOnHover = exports.renderTooltipOnHover = function renderTooltipOnHover() {
+  var tooltipHover = document.querySelector('.skill-tooltip');
+
+  function renderOnHover(e) {
+    console.log("hello");
+    var x = e.clientX;
+    var y = e.clientY;
+
+    tooltipHover.style.top = y + 20 + 'px';
+    tooltipHover.style.left = x + 20 + 'px';
+  }
+
+  document.addEventListener('mousemove', renderOnHover);
 };
 
 /***/ })

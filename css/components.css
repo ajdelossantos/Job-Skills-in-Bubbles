@@ -67,8 +67,8 @@ h3 {
   height: 1336px;
   width: 100%;
   background-image: linear-gradient(
-      rgba(199, 199, 199, 0.95),
-      rgba(199, 199, 199, 0.95)
+      rgba(75, 75, 75, 0.975),
+      rgba(75, 75, 75, 0.975)
     ),
     url("../docs/work.jpg");
   background-size: cover;
@@ -343,18 +343,17 @@ h3 {
 }
 
 .skill-circle:hover {
-  stroke: #2038fb;
+  z-index: 100;
+  stroke: #e3e4ee;
   stroke-width: 5px;
   cursor: pointer;
 }
 
 .skill-tooltip {
-  color: #fff;
+  color: rgba(0, 0, 0, .85);
   border: none;
-  background-color: transparent;
-  position: relative;
-  top: 8px;
-  left: 20px;
+  background-color: #fdfdfd;
+  position: fixed;
 }
 
 .about-header {
