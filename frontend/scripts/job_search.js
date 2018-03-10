@@ -51,6 +51,7 @@ export const populateSearchResult = jobs => {
 
     $(`#${job.uuid}`).click((event) => {
       event.preventDefault();
+      clearSearchResult();
       return receiveJobSkills(job.uuid);
     });
   });

@@ -5090,6 +5090,7 @@ var populateSearchResult = exports.populateSearchResult = function populateSearc
 
     $("#" + job.uuid).click(function (event) {
       event.preventDefault();
+      clearSearchResult();
       return receiveJobSkills(job.uuid);
     });
   });

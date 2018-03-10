@@ -15,29 +15,30 @@
 
 <body>
   <div class="main">
-    <hgroup class="header">
-      <span id='about-toggle' class='modal__btn'>About</span>
-      <div class="header__title">
-        <h2>Job Skills in Bubbles</h2>
+    <div class="wrapper">
+      <hgroup class="header">
+        <span id='about-toggle' class='modal__btn'>About</span>
+        <div class="header__title">
+          <h2>Job Skills in Bubbles</h2>
+        </div>
+      </hgroup>
+
+      <div class="background-image"></div>
+
+      <div class="search-group">
+        <heading>
+          <input type="search" name="search" id="search" placeholder="enter a job title" />
+          <button id="search-btn" class="btn-reset">
+            <i class="fa fa-search" aria-hidden="true"></i>
+          </button>
+        </heading>
+
+        <div id="search-list" class="search-list">
+          <ul id="search-results"></ul>
+        </div>
       </div>
-    </hgroup>
 
-    <div class="background-image"></div>
-
-    <div class="search-group">
-      <heading>
-        <input type="search" name="search" id="search" placeholder="enter a job title" />
-        <button id="search-btn" class="btn-reset">
-          <i class="fa fa-search" aria-hidden="true"></i>
-        </button>
-      </heading>
-
-      <div id="search-list">
-        <ul id="search-results"></ul>
-      </div>
-    </div>
-
-    <div class="info-group">
+      <!-- <div class="info-group"> -->
 
       <div id="graphic-group">
         <div id="title"></div>
@@ -48,6 +49,7 @@
         <h2>core job-skills ranking</h2>
         <ul id="skills-list"></ul>
       </div>
+      <!-- </div> -->
     </div>
   </div>
 

@@ -77,10 +77,20 @@ h3 {
 }
 
 .main,
-.header-group,
 .info-group,
 .about-group {
   display: flex;
+}
+
+.wrapper {
+  width: 100%;
+  display: grid;
+  grid-template-areas: 
+  "header header header"
+  "search search search"
+  "chart chart skills";
+  /* "chart chart skills"
+  "chart chart skills" */
 }
 
 .main {
@@ -91,6 +101,7 @@ h3 {
 }
 
 .header {
+  grid-area: header;
   display: grid;
   grid-template-columns: 1fr 4fr 1fr;
   width: 100%;
@@ -98,10 +109,6 @@ h3 {
   align-items: center;
   border-bottom: 1px solid #888888;
   background: #fafafa;
-}
-
-.header-group {
-  border-bottom: 1px solid rgba(207, 208, 235, 0.8);
 }
 
 .header__title h2 {
@@ -148,18 +155,12 @@ h3 {
   justify-content: center;
 }
 
-.header-group,
 .info-group {
   flex-direction: row;
   max-width: 1100px;
   margin-bottom: 40px;
 }
 
-.header-group {
-  padding: 20px;
-}
-
-.header-group,
 .info-group {
   width: 1100px;
   margin-top: 60px;
@@ -206,12 +207,25 @@ h3 {
 }
 
 #graphics-group {
+  grid-area: chart;
   border-bottom: 1px solid #eee;
   border-top: 1px solid #eee;
 }
 
-/* .search-group, */
+.search-group {
+  grid-area: search;
+  height: 100%;
+  max-height: 300px;
+  /* position: fixed; */
+  top: 8em;
+  z-index: 5;
+  overflow: hidden;
+  /* debugging */
+  border: 1px dashed red;
+}
+
 .skills-group {
+  grid-area: skills;
   box-sizing: border-box;
   flex: 2.5;
   padding: 10px 20px;
@@ -222,6 +236,10 @@ h3 {
 
 .skills-group {
   box-shadow: inset 5px 0px 5px -1px rgb(183, 185, 197);
+}
+
+.search-list {
+  height: 100%;
 }
 
 #search-results {
