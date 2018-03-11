@@ -24,13 +24,6 @@ let currentJob = test;
 export const getJobs = () => jobsList;
 export const getJob = () => currentJob;
 
-export const handleJob = payload => {
-  jobsList = payload;
-  clearSearchResult();
-  populateSearchResult(jobsList);
-  clearSearchInput();
-  return jobsList;
-};
 
 export const assignCurrentJob = payload => {
   currentJob = payload;
@@ -44,11 +37,16 @@ export const receiveJobSkills = uuid => {
   fetchJobSkills(uuid).then(response => assignCurrentJob(response));
 };
 
+export const displaySearchList = () => {
+  const searchList = document.getElementById('search-list');
+  searchList.classList.remove('hidden');
+};
+
 export const populateSearchResult = jobs => {
   jobs.forEach(job => {
     // jobListItem(job) returns markup
     $("#search-results").append(jobListItem(job));
-
+    
     $(`#${job.uuid}`).click((event) => {
       event.preventDefault();
       clearSearchResult();
@@ -59,3 +57,12 @@ export const populateSearchResult = jobs => {
 
 export const clearSearchResult = () => $("#search-results").empty();
 export const clearSearchInput = () => $("#search").val("");
+
+export const handleJob = payload => {
+  jobsList = payload;
+  clearSearchResult();
+  populateSearchResult(jobsList);
+  displaySearchList();
+  clearSearchInput();
+  return jobsList;
+};

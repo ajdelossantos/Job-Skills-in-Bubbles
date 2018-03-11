@@ -27,15 +27,6 @@ h3 {
   border-radius: 10px;
 }
 
-#search {
-  font-family: "Raleway", sans-serif;
-  font-size: 10px;
-  letter-spacing: 1px;
-  height: 24px;
-  border-radius: 5px;
-  padding: 2px;
-}
-
 #search-btn {
   color: #6c7bfc;
   border: 1px solid #6c7bfc;
@@ -77,7 +68,6 @@ h3 {
 }
 
 .main,
-.info-group,
 .about-group {
   display: flex;
 }
@@ -89,8 +79,7 @@ h3 {
   "header header header"
   "search search search"
   "chart chart skills";
-  /* "chart chart skills"
-  "chart chart skills" */
+  grid-gap: 20px;
 }
 
 .main {
@@ -154,6 +143,11 @@ h3 {
   align-items: center;
   justify-content: center;
 }
+ 
+/* 
+========== 
+DELETE
+==========
 
 .info-group {
   flex-direction: row;
@@ -165,6 +159,15 @@ h3 {
   width: 1100px;
   margin-top: 60px;
 }
+
+.info-group {
+  box-sizing: border-box;
+  flex: 6;
+  justify-content: space-between;
+  height: 900px;
+  border-radius: 2px;
+} 
+========== */
 
 .about-group {
   box-sizing: border-box;
@@ -187,8 +190,8 @@ h3 {
 /* frosted-glass effect */
 .about-group::before {
   background: linear-gradient(
-      rgba(199, 199, 199, 0.5),
-      rgba(199, 199, 199, 0.5)
+      rgba(199, 199, 199, 0.75),
+      rgba(199, 199, 199, 0.75)
     ), url("../docs/work.jpg") 0 / cover fixed;
   z-index: -1;
   content: '';
@@ -198,13 +201,6 @@ h3 {
   margin: -30px;
 }
 
-.info-group {
-  box-sizing: border-box;
-  flex: 6;
-  justify-content: space-between;
-  height: 900px;
-  border-radius: 2px;
-}
 
 #graphics-group {
   grid-area: chart;
@@ -214,14 +210,26 @@ h3 {
 
 .search-group {
   grid-area: search;
-  height: 100%;
-  max-height: 300px;
-  /* position: fixed; */
-  top: 8em;
+  display: grid;
+  justify-items: center;
+  align-items: start;
+  height: 100px;
   z-index: 5;
   overflow: hidden;
   /* debugging */
-  border: 1px dashed red;
+  /* border: 1px dashed red; */
+  /* height: 100%; */
+  /* top: 8em; */
+}
+
+.search__bar {
+  height: 44px;
+  width: 632px;
+  font-family: "Raleway", sans-serif;
+  font-size: 16px;
+  letter-spacing: 1px;
+  border-radius: 2px;
+  padding: 5px;
 }
 
 .skills-group {
@@ -239,7 +247,15 @@ h3 {
 }
 
 .search-list {
-  height: 100%;
+  position: absolute;
+  background: #fdfdfd;
+  top: 175px;
+  height: 300px;
+  border: 1px solid #888;
+  overflow: hidden;
+  width: 630px;
+  left: 144px;
+  border-radius: 2px;
 }
 
 #search-results {
