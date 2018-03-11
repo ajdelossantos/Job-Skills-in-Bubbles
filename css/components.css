@@ -52,7 +52,9 @@ h3 {
 }
 
 .search__btn {
-  font-size: 18px;
+  text-align: center;
+  height: 22px;
+  font-size: 16px;
   margin-left: 40px;
   box-shadow: none;
   transition: all .3s ease-out;
@@ -220,6 +222,12 @@ h3 {
   /* border: 1px dashed red; */
   /* height: 100%; */
   /* top: 8em; */
+}
+
+.search__container--wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .search__bar {
