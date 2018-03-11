@@ -115,8 +115,15 @@ export const skillBubbleChart = () => {
 
   circles.forEach(circle => {
     circle.addEventListener("mousemove", event => {
-      let skillItem = document.getElementById(`li-${circle.id}`);
+      const skillItem = document.getElementById(`li-${circle.id}`);
+      const tooltipHover = document.querySelector('.skill-tooltip');
+      
+      let x = event.clientX;
+      let y = event.clientY;
+      
       tooltip.html(skillItem.innerHTML).style("display", "block");
+      tooltipHover.style.top = (y + 20) + 'px';
+      tooltipHover.style.left = (x + 20) + 'px';
     });
     circle.addEventListener("mouseout", event => {
       tooltip.html("<span>&nbsp;</span>").style("display", "none");

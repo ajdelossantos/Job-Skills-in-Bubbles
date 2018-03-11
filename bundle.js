@@ -5023,7 +5023,7 @@ function clipEdges(x0, y0, x1, y1) {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.clearSearchInput = exports.clearSearchResult = exports.populateSearchResult = exports.receiveJobSkills = exports.assignCurrentJob = exports.handleJob = exports.getJob = exports.getJobs = exports.fetchJobSkills = exports.fetchNormalizedJob = undefined;
+exports.handleJob = exports.clearSearchInput = exports.clearSearchResult = exports.populateSearchResult = exports.hideSearchList = exports.displaySearchList = exports.receiveJobSkills = exports.assignCurrentJob = exports.getJob = exports.getJobs = exports.fetchJobSkills = exports.fetchNormalizedJob = undefined;
 
 var _skills_graphics = __webpack_require__(91);
 
@@ -5061,14 +5061,6 @@ var getJob = exports.getJob = function getJob() {
   return currentJob;
 };
 
-var handleJob = exports.handleJob = function handleJob(payload) {
-  jobsList = payload;
-  clearSearchResult();
-  populateSearchResult(jobsList);
-  clearSearchInput();
-  return jobsList;
-};
-
 var assignCurrentJob = exports.assignCurrentJob = function assignCurrentJob(payload) {
   currentJob = payload;
   SkillsGraphics.renderSkills();
@@ -5083,6 +5075,16 @@ var receiveJobSkills = exports.receiveJobSkills = function receiveJobSkills(uuid
   });
 };
 
+var displaySearchList = exports.displaySearchList = function displaySearchList() {
+  var searchList = document.getElementById('search-list');
+  searchList.classList.remove('hidden');
+};
+
+var hideSearchList = exports.hideSearchList = function hideSearchList() {
+  var searchList = document.getElementById('search-list');
+  searchList.classList.add('hidden');
+};
+
 var populateSearchResult = exports.populateSearchResult = function populateSearchResult(jobs) {
   jobs.forEach(function (job) {
     // jobListItem(job) returns markup
@@ -5090,6 +5092,8 @@ var populateSearchResult = exports.populateSearchResult = function populateSearc
 
     $("#" + job.uuid).click(function (event) {
       event.preventDefault();
+      clearSearchResult();
+      hideSearchList();
       return receiveJobSkills(job.uuid);
     });
   });
@@ -5100,6 +5104,15 @@ var clearSearchResult = exports.clearSearchResult = function clearSearchResult()
 };
 var clearSearchInput = exports.clearSearchInput = function clearSearchInput() {
   return $("#search").val("");
+};
+
+var handleJob = exports.handleJob = function handleJob(payload) {
+  jobsList = payload;
+  clearSearchResult();
+  populateSearchResult(jobsList);
+  displaySearchList();
+  clearSearchInput();
+  return jobsList;
 };
 
 /***/ }),
@@ -5204,7 +5217,14 @@ var skillBubbleChart = exports.skillBubbleChart = function skillBubbleChart() {
   circles.forEach(function (circle) {
     circle.addEventListener("mousemove", function (event) {
       var skillItem = document.getElementById("li-" + circle.id);
+      var tooltipHover = document.querySelector('.skill-tooltip');
+
+      var x = event.clientX;
+      var y = event.clientY;
+
       tooltip.html(skillItem.innerHTML).style("display", "block");
+      tooltipHover.style.top = y + 20 + 'px';
+      tooltipHover.style.left = x + 20 + 'px';
     });
     circle.addEventListener("mouseout", function (event) {
       tooltip.html("<span>&nbsp;</span>").style("display", "none");

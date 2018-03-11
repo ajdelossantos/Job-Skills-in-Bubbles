@@ -15,31 +15,30 @@
 
 <body>
   <div class="main">
-    <hgroup class="header">
-      <span id='about-toggle' class='modal__btn'>About</span>
-      <div class="header__title">
-        <h2>Job Skills in Bubbles</h2>
-      </div>
-    </hgroup>
-
     <div class="background-image"></div>
-    <div class="info-group">
-      <div class="search-group">
-        <heading>
-          <h2>search for a job</h2>
-          <input type="search" name="search" id="search" placeholder="enter a job title" />
-          <button id="search-btn" class="btn-reset">
-            <i class="fa fa-search" aria-hidden="true"></i>
-          </button>
-        </heading>
-
-        <div id="search-list">
-          <ul id="search-results"></ul>
+    <div class="wrapper">
+      <hgroup class="header">
+        <span id='about-toggle' class='btn modal__btn'>About</span>
+        <div class="header__title">
+          <h2>Job Skills in Bubbles</h2>
         </div>
+      </hgroup>
+
+
+      <div class="search-group">
+        <heading class="search__container">
+          <input type="search" name="search" id="search" class="search__bar" placeholder="enter a job title" />
+          <span id="search-btn" class="btn search__btn">
+            <i class="fa fa-search" aria-hidden="true"></i>
+          </span>
+          <div id="search-list" class="search-list hidden">
+            <ul id="search-results"></ul>
+          </div>
+        </heading>
       </div>
 
       <div id="graphic-group">
-        <div id="title"></div>
+        <div id="title" class="chart__title"></div>
         <div id="chart" class="chart-container"></div>
       </div>
 
