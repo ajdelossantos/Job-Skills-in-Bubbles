@@ -42,6 +42,11 @@ export const displaySearchList = () => {
   searchList.classList.remove('hidden');
 };
 
+export const hideSearchList = () => {
+  const searchList = document.getElementById('search-list');
+  searchList.classList.add('hidden');
+};
+
 export const populateSearchResult = jobs => {
   jobs.forEach(job => {
     // jobListItem(job) returns markup
@@ -50,6 +55,7 @@ export const populateSearchResult = jobs => {
     $(`#${job.uuid}`).click((event) => {
       event.preventDefault();
       clearSearchResult();
+      hideSearchList();
       return receiveJobSkills(job.uuid);
     });
   });

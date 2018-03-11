@@ -5023,7 +5023,7 @@ function clipEdges(x0, y0, x1, y1) {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.handleJob = exports.clearSearchInput = exports.clearSearchResult = exports.populateSearchResult = exports.displaySearchList = exports.receiveJobSkills = exports.assignCurrentJob = exports.getJob = exports.getJobs = exports.fetchJobSkills = exports.fetchNormalizedJob = undefined;
+exports.handleJob = exports.clearSearchInput = exports.clearSearchResult = exports.populateSearchResult = exports.hideSearchList = exports.displaySearchList = exports.receiveJobSkills = exports.assignCurrentJob = exports.getJob = exports.getJobs = exports.fetchJobSkills = exports.fetchNormalizedJob = undefined;
 
 var _skills_graphics = __webpack_require__(91);
 
@@ -5080,6 +5080,11 @@ var displaySearchList = exports.displaySearchList = function displaySearchList()
   searchList.classList.remove('hidden');
 };
 
+var hideSearchList = exports.hideSearchList = function hideSearchList() {
+  var searchList = document.getElementById('search-list');
+  searchList.classList.add('hidden');
+};
+
 var populateSearchResult = exports.populateSearchResult = function populateSearchResult(jobs) {
   jobs.forEach(function (job) {
     // jobListItem(job) returns markup
@@ -5088,6 +5093,7 @@ var populateSearchResult = exports.populateSearchResult = function populateSearc
     $("#" + job.uuid).click(function (event) {
       event.preventDefault();
       clearSearchResult();
+      hideSearchList();
       return receiveJobSkills(job.uuid);
     });
   });
