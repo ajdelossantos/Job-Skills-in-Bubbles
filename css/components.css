@@ -19,11 +19,13 @@ h3 {
 
 ::-webkit-scrollbar {
   width: 10px;
-  background-color: rgba(225, 225, 255, 0.9);
+  /* background-color: rgba(225, 225, 255, 0.9); */
+  background-color: transparent;
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: rgba(207, 208, 235, 0.8);
+  /* background-color: rgba(207, 208, 235, 0.8); */
+  background-color: rgba(75, 75, 75, 0.8);
   border-radius: 10px;
 }
 
@@ -43,7 +45,8 @@ h3 {
   border: 1px solid #fafafa;
   cursor: pointer;
   color: rgba(10, 23, 124, 0.85);
-  background: rgba(10, 23, 124, 0.25);
+  /* background: rgba(10, 23, 124, 0.25); */
+  background-color: transparent;
   border-color: rgba(10, 23, 124, 0.85);
 }
 
@@ -77,7 +80,7 @@ h3 {
   margin: 0;
 }
 
-.background-image {
+/* .background-image {
   position: absolute;
   top: 0;
   left: 0;
@@ -91,11 +94,21 @@ h3 {
   background-size: cover;
   z-index: -1;
   box-shadow: 0px 2px 5px 1px rgb(183, 185, 197);
-}
+} */
 
 .main,
 .about-group {
   display: flex;
+}
+
+.main {
+  background-image: linear-gradient(
+      rgba(75, 75, 75, 0.975),
+      rgba(75, 75, 75, 0.975)
+    ),
+    url("../docs/work.jpg");
+  background-size: cover;
+  z-index: -1;
 }
 
 .wrapper {
@@ -245,28 +258,43 @@ h3 {
 .search-list,
 .search__bar {
   box-shadow: 0 2px 2px 0 rgba(0,0,0,0.4),0 0 0 1px rgba(0,0,0,0.2);
-  transition: box-shadow 200ms cubic-bezier(0.4, 0.0, 0.2, 1);
+  transition: box-shadow 200ms cubic-bezier(0.4, 0.0, 0.2, 1), transform 200ms ease;
 }
 
 .search__bar:hover,
 .search__bar:focus,
 .search-list:hover,
 .search-list:focus{
+  outline: none;
+  transform: scale(1.05, 1.05);
   box-shadow: 0 2px 2px 0 rgba(0,0,0,0.9),0 0 0 1px rgba(0,0,0,0.45);
 }
 
-.skills-group {
-  grid-area: skills;
-  box-sizing: border-box;
-  flex: 2.5;
-  padding: 10px 20px;
-  width: 250px;
-  height: 100%;
-  background-color: rgba(225, 225, 255, 0.9);
+.search-list:hover,
+.search-list:focus{
+  transform: scale(1.02, 1.02) translateY(3%);
 }
 
 .skills-group {
+  /* Grid positioning */
+  grid-area: skills;
+  align-self: center;
+  justify-self: center;
+  /* Center children with flex */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* styling */
+  box-sizing: border-box;
+  padding: 20px;
+  width: 350px;
+  height: 100%;
+  background-color: rgba(225, 225, 255, 0.9);
   box-shadow: inset 5px 0px 5px -1px rgb(183, 185, 197);
+}
+
+.skills-group h2 {
+  font-size: 20px;
 }
 
 .search-list {
@@ -290,7 +318,7 @@ h3 {
 
 #search-results li {
   font-weight: 700;
-  font-size: 10px;
+  font-size: 16px;
   padding: 12px 10px;
   border-bottom: 1px solid rgba(207, 208, 235, 0.8);
 }
@@ -327,7 +355,7 @@ h3 {
 .skill-tooltip,
 .skills-list-box {
   box-sizing: border-box;
-  font-size: 10px;
+  font-size: 14px;
   font-weight: 700px;
   border: 1px solid rgba(207, 208, 235, 0.8);
   border-radius: 2px;
@@ -335,9 +363,9 @@ h3 {
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
-  width: 200px;
-  height: 250px;
-  padding: 5px;
+  width: 300px;
+  height: 300px;
+  padding: 10px;
   background-color: #fbfbfb;
 }
 
@@ -467,4 +495,62 @@ h3 {
 .slide-in.active {
   opacity: 1;
   transform: translateX(0%) scale(1);
+}
+
+@media (max-width: 1024px) {
+  .skills-group {
+  /* styling */
+  padding: 10px;
+  width: 250px;
+  }
+
+  .skill-tooltip,
+  .skills-list-box {
+  font-size: 12px;
+  width: 200px;
+  padding: 5px;
+  }
+}
+
+@media (max-width: 900px) {
+  .wrapper {
+    grid-template-areas: 
+    "header"
+    "search"
+    "chart"
+    "skills";
+  }
+
+  .header__title h2 {
+    font-size: 30px;
+  }
+
+  .modal__btn {
+    font-size: 16px;
+  }
+
+  .search__bar {
+    width: 350px;
+  }
+
+  .search__btn {
+    margin-left: 20px;
+  }
+
+  .search-list {
+    width: 100%;
+  }
+
+  .skills-group {
+  /* styling */
+  padding: 20px;
+  width: 400px;
+  }
+
+  .skill-tooltip,
+  .skills-list-box {
+  font-size: 14px;
+  width: 300px;
+  padding: 10px;
+  }
 }
