@@ -201,10 +201,8 @@ h3 {
 }
 
 
-#graphics-group {
+#graphic-group {
   grid-area: chart;
-  border-bottom: 1px solid #eee;
-  border-top: 1px solid #eee;
 }
 
 .search__container {
@@ -384,6 +382,7 @@ h3 {
 }
 
 .skill-tooltip {
+  display: none;
   color: rgba(0, 0, 0, .85);
   border: none;
   background-color: #fdfdfd;
