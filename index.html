@@ -15,7 +15,7 @@
 
 <body>
   <div class="main">
-    <div class="background-image"></div>
+    <!-- <div class="background-image"></div> -->
     <div class="wrapper">
       <hgroup class="header">
         <span id='about-toggle' class='btn modal__btn'>About</span>
@@ -55,48 +55,45 @@
     <div class="about-group absolute-center slide-in">
       <span class='about__close'>&times</span>
       <h2 class="about-header">about</h2>
-      <p class="about-text">
-        Data at Work is about enabling an open 21st century workforce data ecosystem... by developing datasets, tools, standards,
-        and best practices for publishing data on skills, jobs, and training. The heart of Data at Work is the Open Skills
-        Project... It’s aim is to improve our understanding of the labor market and reduce frictions in the workforce data
-        ecosystem by enabling a more granular common language of skills among industry, academia, government, and nonprofit
-        organizations.
-      </p>
+
+      <p class="about-text">This infographic creates a thought-provoking, critical, and even amusing visualization of 119 core job skills to help
+        everyday users understand the language of the job market and ultimately help them find a job.</p>
+
+      <p class="about-text">The Open Skills Project is a database that catalogs jobs and skills, asking what are jobs called, and what skills are
+        relevant to those jobs? Read more about it below!</p>
       <cite>
         <a class='about__link' href="http://dataatwork.org/about/">Vision Statement, Data at Work</a>
-        <br>
         <a class='about__link' href="http://dataatwork.org/about/">http://dataatwork.org/about/</a>
-        <br>
-        <br>
+      </cite>
+      <cite>
         <a class='about__link' href="https://www.onetonline.org/">Importance and expertise level data courtesy of ONET</a>
-        <br>
         <a class='about__link' href="https://www.onetonline.org/">https://www.onetonline.org/</a>
       </cite>
-      <br>
-      <p class="about-text">The Open Skills Project database is a well-maintained database that catalogs jobs and skills and connects them together
-        based on data extracted and aggregated from public and private sources (i.e. CareerBuilder, et al). It is analagous
-        in role and quality to the data collected by the Bureau of Labor Statistics; both attempt to represent the labor
-        market and ask: what are jobs called, and what skills are relevant to those jobs?</p>
-      <br>
-      <p class="about-text">The answers to such questions are immediately useful to job searchers looking to better understand and broaden their
-        search strategies or non-technical labor-market researchers. This inforgraphic aims to create a thoughtful and critical
-        visualization of 119 core job skills to help everyday users understand the language of the job market and ultimately
-        help them find a job.</p>
+
+      <h2 class="about-header">legend</h2>
+      <div class="about__legend">
+        <div>
+          <p>circle size = importance, scaled 1&mdash;5</p>
+          <ul>
+            <li>1 = irrelevant</li>
+            <li>2 = convenient</li>
+            <li>3 = important</li>
+            <li>4 = necessary</li>
+            <li>5 = critical</li>
+          </ul>
+        </div>
+        <div>
+          <p>circle color = expertise-level, scaled 0&mdash;7</p>
+          <ul>
+            <li>purple = little or no experience</li>
+            <li>red = novice</li>
+            <li>yellow = competent</li>
+            <li>green = expert</li>
+            <li>blue = mastery</li>
+          </ul>
+        </div>
+      </div>
     </div>
-    <!-- <div class="header-group">
-      <hgroup>
-        <div class="instructions">
-          <h3 class="h-flex-1">find a job</h3>
-          <h3 class="h-flex-2">select a job</h3>
-          <h3 class="h-flex-3">hover over a skill bubble</h3>
-        </div>
-        <div class="legend">
-          <h3>importance::size</h3>
-          <h3>expertise-level:: purple
-            < red < yellow < green < blue</h3>
-        </div>
-      </hgroup>
-    </div> -->
     <div class='modal-screen'></div>
   </div>
 </body>

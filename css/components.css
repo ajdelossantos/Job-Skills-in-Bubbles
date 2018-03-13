@@ -109,6 +109,8 @@ h3 {
     url("../docs/work.jpg");
   background-size: cover;
   z-index: -1;
+  width: 100%;
+  height: 100vh;
 }
 
 .wrapper {
@@ -187,25 +189,26 @@ h3 {
   box-sizing: border-box;
   color: rgba(0, 0, 0, .85);
   padding: 40px;
-  flex-direction: column;
   background: hsla(0, 0%, 100%, .6);
   border: 1px solid rgba(0, 0, 0, .85);
   border-radius: 2px;
-  width: 100%;
-  max-width: 1100px;
+  width: 75vw;
+  max-width: 900px;
   /* Height declaration for modal */
   /* breaks at 600 px */
-  height: 100%;
-  max-height: 1000px;
+  height: 75vh;
+  /* max-height: 1000px; */
   z-index: 10;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
 }
 
 /* frosted-glass effect */
 .about-group::before {
   background: linear-gradient(
-      rgba(199, 199, 199, 0.75),
-      rgba(199, 199, 199, 0.75)
+      rgba(199, 199, 199, 0.65),
+      rgba(199, 199, 199, 0.65)
     ), url("../docs/work.jpg") 0 / cover fixed;
   z-index: -1;
   content: '';
@@ -255,12 +258,17 @@ h3 {
 }
 
 /* Search box shadows and transitions */
+
+.skill-tooltip,
+.skills-group,
 .search-list,
 .search__bar {
   box-shadow: 0 2px 2px 0 rgba(0,0,0,0.4),0 0 0 1px rgba(0,0,0,0.2);
   transition: box-shadow 200ms cubic-bezier(0.4, 0.0, 0.2, 1), transform 200ms ease;
 }
 
+.skill-tooltip:hover,
+.skills-group:hover,
 .search__bar:hover,
 .search__bar:focus,
 .search-list:hover,
@@ -290,7 +298,8 @@ h3 {
   width: 350px;
   height: 100%;
   background-color: rgba(225, 225, 255, 0.9);
-  box-shadow: inset 5px 0px 5px -1px rgb(183, 185, 197);
+  border-radius: 2px;
+  /* box-shadow: inset 5px 0px 5px -1px rgb(183, 185, 197); */
 }
 
 .skills-group h2 {
@@ -362,7 +371,6 @@ h3 {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  justify-content: center;
   width: 300px;
   height: 300px;
   padding: 10px;
@@ -393,7 +401,7 @@ h3 {
 
 .skill-flex-1 {
   border-bottom: 1px solid rgba(207, 208, 235, 0.8);
-  padding-top: 5px;
+  margin-top: 10px;
 }
 
 .skills-scores {
@@ -457,7 +465,7 @@ h3 {
 .about__close {
   display: flex;
   position: absolute;
-  left: 1035px;
+  left: 10px;
   top: 5px;
   font-size: 48px;
   height: 50px;
@@ -483,6 +491,12 @@ h3 {
   border-radius: 2px;
 }
 
+.about__legend {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
 .slide-in {
   opacity: 0;
   transform: translateX(-20%) scale(0.95);
@@ -497,7 +511,7 @@ h3 {
   transform: translateX(0%) scale(1);
 }
 
-@media (max-width: 1024px) {
+@media only screen and (max-width: 1024px) {
   .skills-group {
   /* styling */
   padding: 10px;
@@ -512,13 +526,17 @@ h3 {
   }
 }
 
-@media (max-width: 900px) {
+@media only screen and (max-width: 900px) {
   .wrapper {
     grid-template-areas: 
     "header"
     "search"
     "chart"
     "skills";
+  }
+
+  .main {
+    height: 110%;
   }
 
   .header__title h2 {
@@ -544,7 +562,12 @@ h3 {
   .skills-group {
   /* styling */
   padding: 20px;
-  width: 400px;
+  width: 80vw;
+  min-width: 400px;
+  }
+
+  .skills-group:hover {
+    transform: scale(1);
   }
 
   .skill-tooltip,

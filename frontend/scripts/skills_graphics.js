@@ -58,7 +58,7 @@ export const skillBubbleChart = () => {
     .force(
       "collide",
       d3.forceCollide(function(d) {
-        return radiusScale(d.importance);
+        return radiusScale(d.importance) + 2;
       })
     );
 

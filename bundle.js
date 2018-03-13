@@ -5176,7 +5176,7 @@ var skillBubbleChart = exports.skillBubbleChart = function skillBubbleChart() {
   var colorScale = d3.scaleLinear().domain([0, 7]).range([0.1, 0.9]);
 
   var simulation = d3.forceSimulation().force("x", d3.forceX(width / 2).strength(0.05)).force("y", d3.forceY(height / 2).strength(0.05)).force("collide", d3.forceCollide(function (d) {
-    return radiusScale(d.importance);
+    return radiusScale(d.importance) + 2;
   }));
 
   var tooltip = void 0;
@@ -9800,14 +9800,16 @@ var attachSearchListener = exports.attachSearchListener = function attachSearchL
   var searchField = document.getElementById('search');
 
   function fetchData() {
-    console.log('fetch!');
     JobSearch.fetchNormalizedJob(searchField.value).then(function (response) {
       return JobSearch.handleJob(response);
+    }).fail(function (errors) {
+      window.alert('No job title suggestions found. Try again!');
     });
   }
 
   searchBtn.addEventListener('click', fetchData);
-  searchField.addEventListener('change', fetchData);
+  // TODO: Reintegrate at a later point
+  // searchField.addEventListener('change', fetchData);
 
   document.addEventListener('keydown', function (e) {
     if (e.key === "Enter") {
