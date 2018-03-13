@@ -462,6 +462,10 @@ h3 {
   background: rgba(0, 0, 0, 0.85);
 }
 
+.about__container {
+  overflow: auto;
+}
+
 .about__close {
   display: flex;
   position: absolute;
