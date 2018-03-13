@@ -200,8 +200,6 @@ h3 {
   /* max-height: 1000px; */
   z-index: 10;
   overflow: hidden;
-  display: flex;
-  flex-direction: column;
 }
 
 /* frosted-glass effect */
@@ -463,6 +461,8 @@ h3 {
 }
 
 .about__container {
+  display: flex;
+  flex-direction: column;
   overflow: auto;
 }
 
