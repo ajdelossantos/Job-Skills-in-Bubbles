@@ -254,7 +254,7 @@ h3 {
   letter-spacing: 1px;
   border: 1px solid #888;
   border-radius: 2px;
-  padding: 5px;
+  padding: 5px 5px 5px 20px;
 }
 
 /* Search box shadows and transitions */
