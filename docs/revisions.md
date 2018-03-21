@@ -1,22 +1,22 @@
 ## Create new dev branches as needed
-- [] Revamp UI
-- [] Create about and tutorial modal
+- [x] Revamp UI
+- [x] Create about and tutorial modal
     * About
         * About btn on right
         * onCLick Trigger modal, slide-in transition from right side using exsting About
     * Tutorial
         * 
     * Search
-        - [] Implement a dropdown search for first 5 results
-        - [] Bring to center and keep full list to side
-        - [] Fix enter button functionality
+        - [x] Implement a dropdown search for first 5 results
+        - []x Bring to center and keep full list to side
+        - [x] Fix enter button functionality
     * Chart
-        - [] Bring to top & center
-        - [] Move tooltip to more visible spot
-              - [] study D3 tooltips to place on hover dynamically
+        - [x] Bring to top & center
+        - [x] Move tooltip to more visible spot
+              - [x] study D3 tooltips to place on hover dynamically
     * Bonus
         - [] Add second chart for comparison
-- [] Revamp Layout
+- [x] Revamp Layout
   * Reimplement using CSS Grid + Flexbox
-  - [] Bring chart to top
-  - [] Devise better way to present job skills list 
+  - [x] Bring chart to top
+  - [x] Devise better way to present job skills list 
