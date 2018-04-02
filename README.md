@@ -70,15 +70,15 @@ In addition, this project will include:
 
 #### Graphical View
 
-<br>
+
 ![Graphical_View](https://raw.githubusercontent.com/ajdelossantos/Job-Skills-in-Bubbles/master/docs/skill-graphics.png)
-<br>
+
 
 #### List View
 
-<br>
+
 ![List_View](https://raw.githubusercontent.com/ajdelossantos/Job-Skills-in-Bubbles/master/docs/job-list.png)
-<br>
+
 
 ### Architecture and Technologies
 
